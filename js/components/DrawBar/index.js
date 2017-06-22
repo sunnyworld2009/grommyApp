@@ -10,6 +10,7 @@ import {
   Icon
 } from "native-base";
 const routes = ["Home", "BlankPage2"];
+const background = require("../../../images/hairdiction2.jpg");
 export default class DrawBar extends React.Component {
   static navigationOptions = {
     header: null
@@ -20,7 +21,7 @@ export default class DrawBar extends React.Component {
         <Content>
           <Image
             source={{
-              uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/drawer-cover.png"
+              uri: "https://lh3.googleusercontent.com/2GjQ8GaAMwyX3iAl-6R8-T9AA3kC0XXYgIrZkBzye0lZLBK-u7cYulkmzc6tddAWDYI=w300"
             }}
             style={{
               height: 120,
@@ -42,7 +43,7 @@ export default class DrawBar extends React.Component {
                 square
                 style={{ height: 80, width: 70 }}
                 source={{
-                  uri: "https://github.com/GeekyAnts/NativeBase-KitchenSink/raw/react-navigation/img/logo.png"
+                  uri: "https://lh3.googleusercontent.com/2GjQ8GaAMwyX3iAl-6R8-T9AA3kC0XXYgIrZkBzye0lZLBK-u7cYulkmzc6tddAWDYI=w300"
                 }}
               />
             </TouchableOpacity>

@@ -60,7 +60,7 @@ class Home extends Component {
               <Icon active name="power" />
             </Button>
           </Left>
-
+          
           <Body>
             <Title>Home</Title>
           </Body>

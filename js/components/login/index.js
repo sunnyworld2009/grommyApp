@@ -96,10 +96,21 @@ class Login extends Component {
                 <Field name="email" component={this.renderInput} />
                 <Field name="password" component={this.renderInput} />
                 <Button
+                  block
                   style={styles.btn}
                   onPress={() => this.props.navigation.navigate("Home")}
                 >
                   <Text>Login</Text>
+                </Button>
+                <View style={{alignItems: 'center',paddingTop: 10}}>
+                  <Text style={{color: 'white'}}>OR</Text>
+                </View>
+                <Button
+                  block
+                  style={styles.btn}
+                  onPress={() => this.props.navigation.navigate("Home")}
+                >
+                  <Text>Register Driver</Text>
                 </Button>
               </View>
             </Image>
