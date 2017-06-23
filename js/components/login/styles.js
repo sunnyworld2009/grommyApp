@@ -12,7 +12,7 @@ export default {
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#FBFAFA',
+    backgroundColor: '#1E90FF',
   },
   shadow: {
     flex: 1,
@@ -21,7 +21,7 @@ export default {
   },
   bg: {
     flex: 1,
-    marginTop: deviceHeight / 2,
+    marginTop: 20,
     paddingTop: 20,
     paddingLeft: 10,
     paddingRight: 10,

@@ -15,7 +15,8 @@ import { Field, reduxForm } from "redux-form";
 import { setUser } from "../../actions/user";
 import styles from "./styles";
 
-const background = require("../../../images/hairdiction2.jpg");
+const background = require("../../../images/testimage.png");
+const background1 = require("../../../images/logo.png");
 
 const validate = values => {
   const error = {};
@@ -74,12 +75,13 @@ class Login extends Component {
       <Item error={hasError}>
         <Icon active name={input.name === "email" ? "person" : "unlock"} />
         <Input
+          placeholderTextColor='white'
+          textColor='white'
           placeholder={input.name === "email" ? "EMAIL" : "PASSWORD"}
           {...input}
         />
         {hasError
           ? <Item style={{ borderColor: "transparent" }}>
-              <Icon active style={{ color: "red", marginTop: 5 }} name="bug" />
               <Text style={{ fontSize: 15, color: "red" }}>{error}</Text>
             </Item>
           : <Text />}
@@ -91,8 +93,11 @@ class Login extends Component {
       <Container>
         <View style={styles.container}>
           <Content>
-            <Image source={background} style={styles.shadow}>
               <View style={styles.bg}>
+              <View style={{width:200, height: 200, alignSelf:'center'}}>
+                <Image source={background1} style={styles.shadow}></Image>
+              </View>
+
                 <Field name="email" component={this.renderInput} />
                 <Field name="password" component={this.renderInput} />
                 <Button
@@ -113,7 +118,6 @@ class Login extends Component {
                   <Text>Register Driver</Text>
                 </Button>
               </View>
-            </Image>
           </Content>
         </View>
       </Container>

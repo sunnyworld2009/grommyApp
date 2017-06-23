@@ -188,7 +188,7 @@ export default {
   inputErrorBorderColor: '#ed2f2f',
 
   get inputColor() {
-    return this.textColor;
+    return 'white';
   },
   get inputColorPlaceholder() {
     return '#575757';
