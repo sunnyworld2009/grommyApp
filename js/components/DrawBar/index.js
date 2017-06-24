@@ -10,7 +10,7 @@ import {
   Icon
 } from "native-base";
 const routes = ["Home", "BlankPage2"];
-const background = require("../../../images/hairdiction2.jpg");
+const background = require("../../../images/logo.png");
 export default class DrawBar extends React.Component {
   static navigationOptions = {
     header: null
