@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { connect } from "react-redux";
 import BlankPage2 from "../blankPage2";
+import Notifications from "../notifications";
+import Profile from "../profile"
 import DrawBar from "../DrawBar";
 import { DrawerNavigator, NavigationActions } from "react-navigation";
 import {
@@ -104,21 +106,12 @@ class Home extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-
-            <Button
-              transparent
-              onPress={() => {
-                DrawerNav.dispatch(
-                  NavigationActions.reset({
-                    index: 0,
-                    actions: [NavigationActions.navigate({ routeName: "Home" })]
-                  })
-                );
-                DrawerNav.goBack();
-              }}
-            >
-              <Icon active name="power" />
-            </Button>
+          <Button
+            transparent
+            onPress={() => DrawerNav.navigate("DrawerOpen")}
+          >
+            <Icon active name="menu" />
+          </Button>
           </Left>
 
           <Body>
@@ -126,12 +119,12 @@ class Home extends Component {
           </Body>
 
           <Right>
-            <Button
-              transparent
-              onPress={() => DrawerNav.navigate("DrawerOpen")}
-            >
-              <Icon active name="menu" />
-            </Button>
+          <Button
+            transparent
+            onPress={() => this.props.navigation.navigate("Notifications")}
+          >
+            <Icon active name="notifications" />
+          </Button>
           </Right>
         </Header>
         <Content style={{ padding: 15 }}>
@@ -161,7 +154,9 @@ const HomeSwagger = connect(mapStateToProps, bindAction)(Home);
 const DrawNav = DrawerNavigator(
   {
     Home: { screen: HomeSwagger },
-    BlankPage2: { screen: BlankPage2 }
+    BlankPage2: { screen: BlankPage2 },
+    Notifications: { screen: Notifications },
+    Profile: { screen: Profile }
   },
   {
     contentComponent: props => <DrawBar {...props} />
