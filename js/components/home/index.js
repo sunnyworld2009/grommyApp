@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { connect } from "react-redux";
 import BlankPage2 from "../blankPage2";
 import DrawBar from "../DrawBar";
@@ -14,13 +14,36 @@ import {
   Icon,
   Left,
   Body,
-  Right
+  Right,
+  Thumbnail,
+  List,
+  ListItem,
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
 
 import { setIndex } from "../../actions/list";
 import { openDrawer } from "../../actions/drawer";
 import styles from "./styles";
+import Accordion from 'react-native-collapsible/Accordion';
+
+const SECTIONS = [
+  {
+    title: 'First',
+    content: 'Lorem ipsum...',
+  },
+  {
+    title: 'Second',
+    content: 'Lorem ipsum...',
+  },
+  {
+    title: 'Second',
+    content: 'Lorem ipsum...',
+  },
+  {
+    title: 'Second',
+    content: 'Lorem ipsum...',
+  }
+];
 
 class Home extends Component {
   static navigationOptions = {
@@ -36,6 +59,43 @@ class Home extends Component {
   newPage(index) {
     this.props.setIndex(index);
     Actions.blankPage();
+  }
+
+  _renderHeader(section) {
+    return (
+      <View style={styles.accordionHeader}>
+             <View style={{paddingHorizontal: 10, flex: 1}}>
+               <Thumbnail source={{uri: 'https://www.heartlandhealthcenters.org/wp-content/themes/twentytwelve-child/images/user_default.png'}} />
+             </View>
+               <View style={{justifyContent: 'center', flex: 2}}>
+                <Text note>Booking 1</Text>
+               </View>
+      </View>
+    );
+  }
+
+  _renderContent(section) {
+    return (
+      <View style={styles.accordionBody}>
+      <Content>
+                <ListItem >
+                  <Text>Client Name - XYZ</Text>
+                </ListItem>
+                <ListItem>
+                  <Text>Client Location - XYZ</Text>
+                </ListItem>
+                <ListItem>
+                  <Text>Estimated Time - XYZ</Text>
+                </ListItem>
+                <ListItem>
+                  <Text>Pickup & Drop Coordinates - XYZ </Text>
+                </ListItem>
+                <ListItem>
+                  <Text>Payment Mode - XYZ</Text>
+                </ListItem>
+              </Content>
+      </View>
+    );
   }
 
   render() {
@@ -60,7 +120,7 @@ class Home extends Component {
               <Icon active name="power" />
             </Button>
           </Left>
-          
+
           <Body>
             <Title>Home</Title>
           </Body>
@@ -74,22 +134,12 @@ class Home extends Component {
             </Button>
           </Right>
         </Header>
-        <Content>
-          <Grid style={styles.mt}>
-            {this.props.list.map((item, i) => (
-              <Row key={i}>
-                <TouchableOpacity
-                  style={styles.row}
-                  onPress={() =>
-                    this.props.navigation.navigate("BlankPage", {
-                      name: { item }
-                    })}
-                >
-                  <Text style={styles.text}>{item}</Text>
-                </TouchableOpacity>
-              </Row>
-            ))}
-          </Grid>
+        <Content style={{ padding: 15 }}>
+          <Accordion
+            sections={SECTIONS}
+            renderHeader={this._renderHeader}
+            renderContent={this._renderContent}
+          />
         </Content>
       </Container>
     );
