@@ -3,7 +3,8 @@ import { TouchableOpacity, View } from "react-native";
 import { connect } from "react-redux";
 import BlankPage2 from "../blankPage2";
 import Notifications from "../notifications";
-import Profile from "../profile"
+import Profile from "../profile";
+import OrderHistory from "../orderHistory";
 import DrawBar from "../DrawBar";
 import { DrawerNavigator, NavigationActions } from "react-navigation";
 import {
@@ -156,7 +157,8 @@ const DrawNav = DrawerNavigator(
     Home: { screen: HomeSwagger },
     BlankPage2: { screen: BlankPage2 },
     Notifications: { screen: Notifications },
-    Profile: { screen: Profile }
+    Profile: { screen: Profile },
+    "Order History": { screen: OrderHistory }
   },
   {
     contentComponent: props => <DrawBar {...props} />
