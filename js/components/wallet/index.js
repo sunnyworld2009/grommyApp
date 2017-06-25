@@ -51,7 +51,7 @@ class Wallet extends Component {
 
         <Content padder>
           <Card>
-            <View style={{  justifyContent: 'center' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
               <Text style={{ fontSize: 25 }}>$ 2000</Text>
             </View>
           </Card>
