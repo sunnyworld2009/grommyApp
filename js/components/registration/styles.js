@@ -33,4 +33,18 @@ export default {
     marginTop: 20,
     borderRadius: 5,
   },
+  avatar: {
+    borderRadius: 75,
+    width: 50,
+    height: 50
+  },
+  accordionHeader: {
+    flex: 1,
+    flexGrow: 1,
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: 'grey',
+    marginTop: 10,
+    padding:15
+  }
 };

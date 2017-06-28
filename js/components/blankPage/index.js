@@ -45,8 +45,7 @@ class BlankPage extends Component {
           <Right />
         </Header>
         
-        <Content padder
-        </Content>
+        <Content padder></Content>
       </Container>
     );
   }
