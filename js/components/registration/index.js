@@ -21,6 +21,8 @@ import {
   View,
   Input,
   Thumbnail,
+  Picker,
+  Item,
 } from "native-base";
 import ImagePicker from 'react-native-image-picker';
 
@@ -42,6 +44,8 @@ class Registration extends Component {
     this.state = {
       name: "",
       avatarSource: null,
+      driverAvailable: null,
+      driverStatus: null
     };
   }
   
@@ -77,6 +81,12 @@ class Registration extends Component {
           avatarSource: source
         });
       }
+    });
+  }
+  
+  onValueChange (value: string) {
+    this.setState({
+      driverAvailable : value
     });
   }
   
@@ -223,6 +233,46 @@ class Registration extends Component {
                     placeholder={"Driver Longitude"} />
                 </InputGroup>
               </ListItem>
+              <View style={{ paddingLeft: 15, borderBottomWidth: 0.3, flex: 1, flexDirection: 'row', borderBottomColor: 'grey' }}>
+                <View style={{ flex: 0.5,  justifyContent: 'center' }}>
+                  <Text style={{ color: '#575757' }}>Driver Available</Text>
+                </View>
+                <View style={{ flex: 0.5}}>
+                  <Picker
+                    supportedOrientations={['portrait','landscape']}
+                    iosHeader="Select one"
+                    headerBackButtonText="Go Back"
+                    mode="dropdown"
+                    style={{color: '#575757' }}
+                    itemStyle={{color: '#575757'}}
+                    placeholder="Driver Available"
+                    selectedValue={this.state.driverAvailable}
+                    onValueChange={this.onValueChange.bind(this)}>
+                    <Item label="Yes" value="Yes" />
+                    <Item label="No" value="No" />
+                  </Picker>
+                </View>
+              </View>
+              <View style={{ paddingLeft: 15, borderBottomWidth: 0.3, flex: 1, flexDirection: 'row', borderBottomColor: 'grey' }}>
+                <View style={{ flex: 0.5,  justifyContent: 'center' }}>
+                  <Text style={{ color: '#575757' }}>Driver Status</Text>
+                </View>
+                <View style={{ flex: 0.5}}>
+                  <Picker
+                    supportedOrientations={['portrait','landscape']}
+                    iosHeader="Select one"
+                    headerBackButtonText="Go Back"
+                    mode="dropdown"
+                    style={{color: '#575757' }}
+                    itemStyle={{color: '#575757'}}
+                    placeholder="Driver Available"
+                    selectedValue={this.state.driverAvailable}
+                    onValueChange={this.onValueChange.bind(this)}>
+                    <Item label="Active" value="Active" />
+                    <Item label="Blocked" value="Blocked" />
+                  </Picker>
+                </View>
+              </View>
             </List>
             <List>
               
@@ -230,7 +280,7 @@ class Registration extends Component {
                 <View style={{justifyContent: 'center', flex: 2}}>
                   <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
                     <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
-                      <Text>Select a Photo</Text>
+                      <Text style={{color: '#575757'}}>Select a Photo</Text>
                     </View>
                   </TouchableOpacity>
                 </View>
