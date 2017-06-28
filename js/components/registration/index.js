@@ -43,9 +43,17 @@ class Registration extends Component {
     super(props);
     this.state = {
       name: "",
+      license: '',
+      expiry: '',
+      model: '',
+      carNumber: '',
+      contactNumber: '',
+      city: '',
+      address: '',
+      email: '',
+      username: '',
+      password: '',
       avatarSource: null,
-      driverAvailable: null,
-      driverStatus: null
     };
   }
   
@@ -78,7 +86,8 @@ class Registration extends Component {
         // let source = { uri: 'data:image/jpeg;base64,' + response.data };
         
         this.setState({
-          avatarSource: source
+          avatarSource: source,
+          avatarData: response.data
         });
       }
     });
@@ -88,6 +97,53 @@ class Registration extends Component {
     this.setState({
       driverAvailable : value
     });
+  }
+  
+  onRegisterPress() {
+    
+    console.log("Name is ",this.state.name);
+    console.log("Name is ",this.state.license);
+    console.log("Name is ",this.state.expiry);
+    console.log("Name is ",this.state.model);
+    console.log("Name is ",this.state.carNumber);
+    console.log("Name is ",this.state.contactNumber);
+    console.log("Name is ",this.state.city);
+    console.log("Name is ",this.state.address);
+    console.log("Name is ",this.state.email);
+    console.log("Name is ",this.state.username);
+    console.log("Name is ",this.state.password);
+    console.log("Photo is ", this.state.avatarData);
+    
+    let formdata = new FormData();
+    formdata.append("driver_name", this.state.name);
+    formdata.append("driver_licence", this.state.license);
+    formdata.append("driver_expiry", this.state.expiry);
+    formdata.append("driver_model", this.state.model);
+    formdata.append("driver_carno", this.state.carNumber);
+    formdata.append("driver_contact", this.state.contactNumber);
+    formdata.append("driver_city", this.state.city);
+    formdata.append("driver_address", this.state.address);
+    formdata.append("driver_email", this.state.email);
+    formdata.append("driver_username", this.state.username);
+    formdata.append("driver_password", this.state.password);
+    //formdata.append("driver_name", 'test');
+    
+    fetch('http://hairdiction.technoplanetsoftwares.com/web/driver.php',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        "Accept": "application/json"
+      },
+      body: formdata
+    }).then((response) => {
+      return response.json() // << This is the problem
+    })
+    .then((responseData) => { // responseData = undefined
+      console.log(responseData);
+    }).catch(err => {
+      console.log(err);
+    });
+    
   }
   
   render() {
@@ -120,89 +176,80 @@ class Registration extends Component {
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({email: text})}
-                    value={this.state.email}
+                    onChangeText={(text) => this.setState({name: text})}
+                    value={this.state.name}
                     placeholder={"Driver name"} />
                 </InputGroup>
               </ListItem>
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({license: text})}
+                    value={this.state.license}
                     placeholder={"Driver Licence"} />
                 </InputGroup>
               </ListItem>
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({expiry: text})}
+                    value={this.state.expiry}
                     placeholder={"Driver Expiry"} />
                 </InputGroup>
               </ListItem>
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({model: text})}
+                    value={this.state.model}
                     placeholder={"Driver Model"} />
                 </InputGroup>
               </ListItem>
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({carNumber: text})}
+                    value={this.state.carNumber}
                     placeholder={"Driver Car Number"} />
                 </InputGroup>
               </ListItem>
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({contactNumber: text})}
+                    value={this.state.contactNumber}
                     placeholder={"Driver Contact"} />
                 </InputGroup>
               </ListItem>
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({city: text})}
+                    value={this.state.city}
                     placeholder={"Driver City"} />
                 </InputGroup>
               </ListItem>
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({address: text})}
+                    value={this.state.address}
                     placeholder={"Driver Address"} />
                 </InputGroup>
               </ListItem>
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({email: text})}
+                    value={this.state.email}
                     placeholder={"Driver Email"} />
                 </InputGroup>
               </ListItem>
               <ListItem>
                 <InputGroup>
                   <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
+                    onChangeText={(text) => this.setState({username: text})}
+                    value={this.state.username}
                     placeholder={"Driver Username"} />
                 </InputGroup>
               </ListItem>
@@ -215,66 +262,6 @@ class Registration extends Component {
                     placeholder={"Driver Password"} />
                 </InputGroup>
               </ListItem>
-              <ListItem>
-                <InputGroup>
-                  <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
-                    placeholder={"Driver Latitude"} />
-                </InputGroup>
-              </ListItem>
-              <ListItem>
-                <InputGroup>
-                  <Input
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
-                    placeholder={"Driver Longitude"} />
-                </InputGroup>
-              </ListItem>
-              <View style={{ paddingLeft: 15, borderBottomWidth: 0.3, flex: 1, flexDirection: 'row', borderBottomColor: 'grey' }}>
-                <View style={{ flex: 0.5,  justifyContent: 'center' }}>
-                  <Text style={{ color: '#575757' }}>Driver Available</Text>
-                </View>
-                <View style={{ flex: 0.5}}>
-                  <Picker
-                    supportedOrientations={['portrait','landscape']}
-                    iosHeader="Select one"
-                    headerBackButtonText="Go Back"
-                    mode="dropdown"
-                    style={{color: '#575757' }}
-                    itemStyle={{color: '#575757'}}
-                    placeholder="Driver Available"
-                    selectedValue={this.state.driverAvailable}
-                    onValueChange={this.onValueChange.bind(this)}>
-                    <Item label="Yes" value="Yes" />
-                    <Item label="No" value="No" />
-                  </Picker>
-                </View>
-              </View>
-              <View style={{ paddingLeft: 15, borderBottomWidth: 0.3, flex: 1, flexDirection: 'row', borderBottomColor: 'grey' }}>
-                <View style={{ flex: 0.5,  justifyContent: 'center' }}>
-                  <Text style={{ color: '#575757' }}>Driver Status</Text>
-                </View>
-                <View style={{ flex: 0.5}}>
-                  <Picker
-                    supportedOrientations={['portrait','landscape']}
-                    iosHeader="Select one"
-                    headerBackButtonText="Go Back"
-                    mode="dropdown"
-                    style={{color: '#575757' }}
-                    itemStyle={{color: '#575757'}}
-                    placeholder="Driver Available"
-                    selectedValue={this.state.driverAvailable}
-                    onValueChange={this.onValueChange.bind(this)}>
-                    <Item label="Active" value="Active" />
-                    <Item label="Blocked" value="Blocked" />
-                  </Picker>
-                </View>
-              </View>
-            </List>
-            <List>
               
               <View style={styles.accordionHeader}>
                 <View style={{justifyContent: 'center', flex: 2}}>
@@ -299,7 +286,7 @@ class Registration extends Component {
               <Button
                 block
                 style={styles.btn}
-                onPress={() => this.props.navigation.navigate("Home")}
+                onPress={() => this.onRegisterPress()}
                 >
                 <Text>Register</Text>
               </Button>

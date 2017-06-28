@@ -7,7 +7,8 @@ import {
   List,
   ListItem,
   Content,
-  Icon
+  Icon,
+  Thumbnail,
 } from "native-base";
 const routes = ["Home", "Profile", "Order History", "Wallet"];
 const background = require("../../../images/logo.png");
@@ -19,35 +20,7 @@ export default class DrawBar extends React.Component {
     return (
       <Container>
         <Content>
-          <Image
-            source={{
-              uri: "https://lh3.googleusercontent.com/2GjQ8GaAMwyX3iAl-6R8-T9AA3kC0XXYgIrZkBzye0lZLBK-u7cYulkmzc6tddAWDYI=w300"
-            }}
-            style={{
-              height: 120,
-              alignSelf: "stretch",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <TouchableOpacity
-              style={{
-                height: 120,
-                alignSelf: "stretch",
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-              onPress={() => this.props.navigation.navigate("DrawerClose")}
-            >
-              <Image
-                square
-                style={{ height: 80, width: 70 }}
-                source={{
-                  uri: "https://lh3.googleusercontent.com/2GjQ8GaAMwyX3iAl-6R8-T9AA3kC0XXYgIrZkBzye0lZLBK-u7cYulkmzc6tddAWDYI=w300"
-                }}
-              />
-            </TouchableOpacity>
-          </Image>
+          <Image style={{ height: 100, width: 100, alignSelf: 'center' }} source={{uri: 'https://www.heartlandhealthcenters.org/wp-content/themes/twentytwelve-child/images/user_default.png'}} />
           <List
             dataArray={routes}
             renderRow={data => {
@@ -55,12 +28,12 @@ export default class DrawBar extends React.Component {
                 <ListItem
                   button
                   onPress={() => this.props.navigation.navigate(data)}
-                >
+                  >
                   <Text>{data}</Text>
                 </ListItem>
               );
             }}
-          />
+            />
         </Content>
       </Container>
     );
