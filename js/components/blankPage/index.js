@@ -25,7 +25,7 @@ class BlankPage extends Component {
     list: React.PropTypes.arrayOf(React.PropTypes.string),
     openDrawer: React.PropTypes.func
   };
-
+  
   render() {
     const { props: { name, index, list } } = this;
     console.log(this.props.navigation, "000000000");
@@ -37,20 +37,15 @@ class BlankPage extends Component {
               <Icon name="ios-arrow-back" />
             </Button>
           </Left>
-
+          
           <Body>
             <Title>{name ? this.props.name : "Blank Page"}</Title>
           </Body>
-
+          
           <Right />
         </Header>
-
-        <Content padder>
-          <Text>
-            {this.props.navigation.state.params.name.item !== undefined
-              ? this.props.navigation.state.params.name.item
-              : "Create Something Awesome . . ."}
-          </Text>
+        
+        <Content padder
         </Content>
       </Container>
     );

@@ -56,7 +56,7 @@ class Login extends Component {
     };
     this.renderInput = this.renderInput.bind(this);
   }
-
+  
   setUser(name) {
     this.props.setUser(name);
   }
@@ -79,12 +79,12 @@ class Login extends Component {
           textColor='white'
           placeholder={input.name === "email" ? "EMAIL" : "PASSWORD"}
           {...input}
-        />
+          />
         {hasError
           ? <Item style={{ borderColor: "transparent" }}>
-              <Text style={{ fontSize: 15, color: "red" }}>{error}</Text>
-            </Item>
-          : <Text />}
+          <Text style={{ fontSize: 15, color: "red" }}>{error}</Text>
+        </Item>
+        : <Text />}
       </Item>
     );
   }
@@ -93,31 +93,31 @@ class Login extends Component {
       <Container>
         <View style={styles.container}>
           <Content>
-              <View style={styles.bg}>
+            <View style={styles.bg}>
               <View style={{width:200, height: 200, alignSelf:'center'}}>
                 <Image source={background1} style={styles.shadow}></Image>
               </View>
-
-                <Field name="email" component={this.renderInput} />
-                <Field name="password" component={this.renderInput} />
-                <Button
-                  block
-                  style={styles.btn}
-                  onPress={() => this.props.navigation.navigate("Home")}
+              
+              <Field name="email" component={this.renderInput} />
+              <Field name="password" component={this.renderInput} />
+              <Button
+                block
+                style={styles.btn}
+                onPress={() => this.props.navigation.navigate("Home")}
                 >
-                  <Text>Login</Text>
-                </Button>
-                <View style={{alignItems: 'center',paddingTop: 10}}>
-                  <Text style={{color: 'white'}}>OR</Text>
-                </View>
-                <Button
-                  block
-                  style={styles.btn}
-                  onPress={() => this.props.navigation.navigate("Home")}
-                >
-                  <Text>Register Driver</Text>
-                </Button>
+                <Text>Login</Text>
+              </Button>
+              <View style={{alignItems: 'center',paddingTop: 10}}>
+                <Text style={{color: 'white'}}>OR</Text>
               </View>
+              <Button
+                block
+                style={styles.btn}
+                onPress={() => this.props.navigation.navigate("Registration")}
+                >
+                <Text>Register Driver</Text>
+              </Button>
+            </View>
           </Content>
         </View>
       </Container>
