@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-import { TouchableOpacity, View } from "react-native";
+import {
+  TouchableOpacity,
+  View,
+  ActivityIndicator,
+} from "react-native";
 import { connect } from "react-redux";
 import BlankPage2 from "../blankPage2";
 import Notifications from "../notifications";
@@ -59,74 +63,74 @@ class Home extends Component {
     list: React.PropTypes.arrayOf(React.PropTypes.string),
     openDrawer: React.PropTypes.func
   };
-
+  
   newPage(index) {
     this.props.setIndex(index);
     Actions.blankPage();
   }
-
+  
   _renderHeader(section) {
     return (
       <View style={styles.accordionHeader}>
-             <View style={{paddingHorizontal: 10, flex: 1}}>
-               <Thumbnail source={{uri: 'https://www.heartlandhealthcenters.org/wp-content/themes/twentytwelve-child/images/user_default.png'}} />
-             </View>
-               <View style={{justifyContent: 'center', flex: 2}}>
-                <Text note>Booking 1</Text>
-               </View>
+        <View style={{paddingHorizontal: 10, flex: 1}}>
+          <Thumbnail source={{uri: 'https://www.heartlandhealthcenters.org/wp-content/themes/twentytwelve-child/images/user_default.png'}} />
+        </View>
+        <View style={{justifyContent: 'center', flex: 2}}>
+          <Text note>Booking 1</Text>
+        </View>
       </View>
     );
   }
-
+  
   _renderContent(section) {
     return (
       <View style={styles.accordionBody}>
-      <Content>
-                <ListItem >
-                  <Text>Client Name - XYZ</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Client Location - XYZ</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Estimated Time - XYZ</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Pickup & Drop Coordinates - XYZ </Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Payment Mode - XYZ</Text>
-                </ListItem>
-              </Content>
+        <Content>
+          <ListItem >
+            <Text>Client Name - XYZ</Text>
+          </ListItem>
+          <ListItem>
+            <Text>Client Location - XYZ</Text>
+          </ListItem>
+          <ListItem>
+            <Text>Estimated Time - XYZ</Text>
+          </ListItem>
+          <ListItem>
+            <Text>Pickup & Drop Coordinates - XYZ </Text>
+          </ListItem>
+          <ListItem>
+            <Text>Payment Mode - XYZ</Text>
+          </ListItem>
+        </Content>
       </View>
     );
   }
-
+  
   render() {
     console.log(DrawNav, "786785786");
     return (
       <Container style={styles.container}>
         <Header>
           <Left>
-          <Button
-            transparent
-            onPress={() => DrawerNav.navigate("DrawerOpen")}
-          >
-            <Icon active name="menu" />
-          </Button>
+            <Button
+              transparent
+              onPress={() => DrawerNav.navigate("DrawerOpen")}
+              >
+              <Icon active name="menu" />
+            </Button>
           </Left>
-
+          
           <Body>
             <Title>Home</Title>
           </Body>
-
+          
           <Right>
-          <Button
-            transparent
-            onPress={() => this.props.navigation.navigate("Notifications")}
-          >
-            <Icon active name="notifications" />
-          </Button>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.navigate("Notifications")}
+              >
+              <Icon active name="notifications" />
+            </Button>
           </Right>
         </Header>
         <Content style={{ padding: 15 }}>
@@ -134,7 +138,7 @@ class Home extends Component {
             sections={SECTIONS}
             renderHeader={this._renderHeader}
             renderContent={this._renderContent}
-          />
+            />
         </Content>
       </Container>
     );
@@ -164,7 +168,7 @@ const DrawNav = DrawerNavigator(
   },
   {
     contentComponent: props => <DrawBar {...props} />
-  }
+}
 );
 const DrawerNav = null;
 DrawNav.navigationOptions = ({ navigation }) => {

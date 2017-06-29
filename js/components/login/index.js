@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image } from "react-native";
+import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 import {
   Container,
@@ -33,9 +34,6 @@ const validate = values => {
   if (ema.length < 8 && ema !== "") {
     error.email = "too short";
   }
-  if (!ema.includes("@") && ema !== "") {
-    error.email = "@ not included";
-  }
   if (pw.length > 12) {
     error.password = "max 11 characters";
   }
@@ -58,7 +56,11 @@ class Login extends Component {
   }
   
   setUser(name) {
-    this.props.setUser(name);
+    this.props.navigation.navigate("Home");
+    /* if(!!this.props.formValues.test) {
+    this.props.setUser(this.props.formValues.test.values);
+    } */
+    
   }
   renderInput({
     input,
@@ -89,6 +91,7 @@ class Login extends Component {
     );
   }
   render() {
+    
     return (
       <Container>
         <View style={styles.container}>
@@ -103,7 +106,7 @@ class Login extends Component {
               <Button
                 block
                 style={styles.btn}
-                onPress={() => this.props.navigation.navigate("Home")}
+                onPress={() => this.setUser()}
                 >
                 <Text>Login</Text>
               </Button>
@@ -128,14 +131,18 @@ const LoginSwag = reduxForm(
   {
     form: "test",
     validate
-  },
-  function bindActions(dispatch) {
-    return {
-      setUser: name => dispatch(setUser(name))
-    };
   }
 )(Login);
 LoginSwag.navigationOptions = {
   header: null
 };
-export default LoginSwag;
+
+const mapStateToProps = (state => ({
+  formValues: state.form
+}));
+
+const mapDispatchToProps = dispatch => ({
+  setUser: bindActionCreators(setUser, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginSwag)
