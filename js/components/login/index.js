@@ -56,10 +56,10 @@ class Login extends Component {
   }
   
   setUser(name) {
-    this.props.navigation.navigate("Home");
-    /* if(!!this.props.formValues.test) {
-    this.props.setUser(this.props.formValues.test.values);
-    } */
+    // this.props.navigation.navigate("Home");
+    if(!!this.props.formValues.test) {
+      this.props.setUser(this.props.formValues.test.values);
+    } 
     
   }
   renderInput({
