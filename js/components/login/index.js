@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Image } from "react-native";
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
+import _ from 'lodash';
 import {
   Container,
   Content,
@@ -10,7 +11,8 @@ import {
   Button,
   Icon,
   View,
-  Text
+  Text,
+  ListItem,
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 import { setUser } from "../../actions/user";
@@ -31,15 +33,15 @@ const validate = values => {
   if (values.password === undefined) {
     pw = "";
   }
-  if (ema.length < 8 && ema !== "") {
-    error.email = "too short";
+  /* if (ema.length < 8 && ema !== "") {
+  error.email = "too short";
   }
   if (pw.length > 12) {
-    error.password = "max 11 characters";
+  error.password = "max 11 characters";
   }
   if (pw.length < 5 && pw.length > 0) {
-    error.password = "Weak";
-  }
+  error.password = "Weak";
+  } */
   return error;
 };
 
@@ -50,16 +52,34 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: "",
+      showError: false
     };
     this.renderInput = this.renderInput.bind(this);
   }
   
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    if(!_.isEqual(this.props.formValues.test, nextProps.formValues.test)) {
+      this.setState({
+        showError: false
+      });
+    }
+    
+    if(!!nextProps.userData && nextProps.userData.message === "success") {
+      this.props.navigation.navigate("Home");
+    }
+  }
+  
   setUser(name) {
     // this.props.navigation.navigate("Home");
-    if(!!this.props.formValues.test) {
+    if(!!this.props.formValues.test && !!this.props.formValues.test.values && !!this.props.formValues.test.values.email && !!this.props.formValues.test.values.password) {
       this.props.setUser(this.props.formValues.test.values);
-    } 
+    } else {
+      this.setState({
+        showError: true
+      });
+    }
     
   }
   renderInput({
@@ -91,7 +111,9 @@ class Login extends Component {
     );
   }
   render() {
-    
+    if(!!this.props.userData && this.props.userData.message === "success") {
+      this.props.navigation.navigate("Home");
+    }
     return (
       <Container>
         <View style={styles.container}>
@@ -103,29 +125,39 @@ class Login extends Component {
               
               <Field name="email" component={this.renderInput} />
               <Field name="password" component={this.renderInput} />
-              <Button
-                block
-                style={styles.btn}
-                onPress={() => this.setUser()}
-                >
-                <Text>Login</Text>
-              </Button>
               <View style={{alignItems: 'center',paddingTop: 10}}>
-                <Text style={{color: 'white'}}>OR</Text>
-              </View>
-              <Button
-                block
-                style={styles.btn}
-                onPress={() => this.props.navigation.navigate("Registration")}
-                >
-                <Text>Register Driver</Text>
-              </Button>
+                {
+                  this.state.showError && <Text style={{ color: 'red' }}>All Fields are mandatory</Text>
+              }
             </View>
-          </Content>
+            <View style={{alignItems: 'center',paddingTop: 10}}>
+              {
+                !!this.props.userData && this.props.userData.message === "invalid" && <Text style={{ color: 'red' }}>Please Enter Correct Username and Password</Text>
+            }
+          </View>
+          <Button
+            block
+            style={styles.btn}
+            onPress={() => this.setUser()}
+            >
+            <Text>Login</Text>
+          </Button>
+          <View style={{alignItems: 'center',paddingTop: 10}}>
+            <Text style={{color: 'white'}}>OR</Text>
+          </View>
+          <Button
+            block
+            style={styles.btn}
+            onPress={() => this.props.navigation.navigate("Registration")}
+            >
+            <Text>Register Driver</Text>
+          </Button>
         </View>
-      </Container>
-    );
-  }
+      </Content>
+    </View>
+  </Container>
+);
+}
 }
 const LoginSwag = reduxForm(
   {
@@ -138,7 +170,8 @@ LoginSwag.navigationOptions = {
 };
 
 const mapStateToProps = (state => ({
-  formValues: state.form
+  formValues: state.form,
+  userData: state.user.data
 }));
 
 const mapDispatchToProps = dispatch => ({

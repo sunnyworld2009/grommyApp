@@ -3,9 +3,14 @@ import type { Action, Dispatch } from './types';
 
 export const SET_USER = 'SET_USER';
 
-export const userData = (responseData) => ({
+export const updateUserData = (responseData) => ({
   type: SET_USER,
   payload: responseData
+});
+
+export const clearUserData = (responseData) => ({
+  type: SET_USER,
+  payload: null
 });
 
 export function setUser(user:string):Action {
@@ -24,7 +29,8 @@ export function setUser(user:string):Action {
       })
       .then((responseData) => {
         console.log(responseData);
-        dispatch(userData(responseData));
+        dispatch(clearUserData());
+        dispatch(updateUserData(responseData));
       })
     }
     

@@ -13,7 +13,7 @@ export default function (state:State = initialState, action:Action): State {
   if (action.type === SET_HOME_PAGE_DATA) {
     return {
       ...state,
-      name: action.payload,
+      bookingData: action.payload,
     };
   }
   return state;

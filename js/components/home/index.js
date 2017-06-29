@@ -31,6 +31,7 @@ import { Grid, Row } from "react-native-easy-grid";
 
 import { setIndex } from "../../actions/list";
 import { openDrawer } from "../../actions/drawer";
+import { getCurrentBookingData } from "../../actions/homeAction";
 import styles from "./styles";
 import Accordion from 'react-native-collapsible/Accordion';
 
@@ -69,6 +70,10 @@ class Home extends Component {
     list: React.PropTypes.arrayOf(React.PropTypes.string),
     openDrawer: React.PropTypes.func
   };
+  
+  componentWillMount() {
+    this.props.getCurrentBookingData();
+  }
   
   newPage(index) {
     this.props.setIndex(index);
@@ -165,7 +170,8 @@ class Home extends Component {
 function bindAction(dispatch) {
   return {
     setIndex: index => dispatch(setIndex(index)),
-    openDrawer: () => dispatch(openDrawer())
+    openDrawer: () => dispatch(openDrawer()),
+    getCurrentBookingData: () => dispatch(getCurrentBookingData())
   };
 }
 
