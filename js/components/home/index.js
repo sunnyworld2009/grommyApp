@@ -53,6 +53,12 @@ const SECTIONS = [
   }
 ];
 
+const mapStateToProps = state => ({
+  name: state.user.name,
+  list: state.list.list,
+  bookingData: state.home.bookingData
+});
+
 class Home extends Component {
   static navigationOptions = {
     header: null
@@ -106,6 +112,19 @@ class Home extends Component {
     );
   }
   
+  _renderBodyContent() {
+    if(Object.keys(this.props.bookingData).length === 0) {
+      return <ActivityIndicator size='large'/>
+    }
+    return (
+      <Accordion
+        sections={SECTIONS}
+        renderHeader={this._renderHeader}
+        renderContent={this._renderContent}
+        />
+    );
+  }
+  
   render() {
     console.log(DrawNav, "786785786");
     return (
@@ -134,11 +153,9 @@ class Home extends Component {
           </Right>
         </Header>
         <Content style={{ padding: 15 }}>
-          <Accordion
-            sections={SECTIONS}
-            renderHeader={this._renderHeader}
-            renderContent={this._renderContent}
-            />
+          {
+            this._renderBodyContent()
+          }
         </Content>
       </Container>
     );
@@ -151,10 +168,7 @@ function bindAction(dispatch) {
     openDrawer: () => dispatch(openDrawer())
   };
 }
-const mapStateToProps = state => ({
-  name: state.user.name,
-  list: state.list.list
-});
+
 
 const HomeSwagger = connect(mapStateToProps, bindAction)(Home);
 const DrawNav = DrawerNavigator(
