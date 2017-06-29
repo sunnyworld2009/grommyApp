@@ -120,6 +120,14 @@ class Home extends Component {
   _renderBodyContent() {
     if(Object.keys(this.props.bookingData).length === 0) {
       return <ActivityIndicator size='large'/>
+    } else if(this.props.bookingData.message === "not_available") {
+      return (
+        <View style={{ padding: 30}}>
+          <Text style={{ fontSize: 25, fontWeight: 'bold', alignSelf: 'center' }}>
+            No Data
+          </Text>
+        </View>
+      );
     }
     return (
       <Accordion
