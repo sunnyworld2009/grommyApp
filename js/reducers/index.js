@@ -4,6 +4,7 @@ import drawer from "./drawer";
 import user from "./user";
 import list from "./list";
 import home from "./homeReducer";
+import orderHistory from "./orderHistoryReducer";
 
 export default combineReducers({
   form: formReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   user,
   list,
   home,
+  orderHistory,
 });

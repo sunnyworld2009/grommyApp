@@ -55,7 +55,7 @@ const SECTIONS = [
 ];
 
 const mapStateToProps = state => ({
-  name: state.user.name,
+  userData: state.user.data,
   list: state.list.list,
   bookingData: state.home.bookingData
 });
@@ -72,7 +72,7 @@ class Home extends Component {
   };
   
   componentWillMount() {
-    this.props.getCurrentBookingData();
+    this.props.getCurrentBookingData(this.props.userData.driver_id);
   }
   
   newPage(index) {
@@ -139,7 +139,6 @@ class Home extends Component {
   }
   
   render() {
-    console.log(DrawNav, "786785786");
     return (
       <Container style={styles.container}>
         <Header>

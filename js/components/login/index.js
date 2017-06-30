@@ -59,7 +59,6 @@ class Login extends Component {
   }
   
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     if(!_.isEqual(this.props.formValues.test, nextProps.formValues.test)) {
       this.setState({
         showError: false

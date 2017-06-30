@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
-import { View, Image } from 'react-native';
+import {
+  View,
+  Image,
+  ActivityIndicator,
+} from 'react-native';
 import {
   Container,
   Header,
@@ -21,6 +26,8 @@ import {
 import styles from "./styles";
 import Accordion from 'react-native-collapsible/Accordion';
 
+import { getOrderHistoryData } from "../../actions/orderHistoryAction";
+
 const SECTIONS = [
   {
     title: 'First',
@@ -28,10 +35,24 @@ const SECTIONS = [
   }
 ];
 
+const mapStateToProps = state => ({
+  userData: state.user.data,
+  list: state.list.list,
+  previousOrders: state.orderHistory.orders
+});
+
+const mapDispatchToProps = dispatch => ({
+  getOrderHistoryData: bindActionCreators(getOrderHistoryData, dispatch),
+});
+
 class OrderHistory extends Component {
   static navigationOptions = {
     header: null
   };
+  
+  componentWillMount() {
+    this.props.getOrderHistoryData(this.props.userData.driver_id);
+  }
   
   _renderHeader(section) {
     return (
@@ -68,6 +89,27 @@ class OrderHistory extends Component {
     );
   }
   
+  _renderBodyContent() {
+    if(Object.keys(this.props.previousOrders).length === 0) {
+      return <ActivityIndicator size='large'/>
+    } else if(this.props.previousOrders.message === "not_available") {
+      return (
+        <View style={{ padding: 30}}>
+          <Text style={{ fontSize: 25, fontWeight: 'bold', alignSelf: 'center' }}>
+            No Data
+          </Text>
+        </View>
+      );
+    }
+    return (
+      <Accordion
+        sections={SECTIONS}
+        renderHeader={this._renderHeader}
+        renderContent={this._renderContent}
+        />
+    );
+  }
+  
   render() {
     const { props: { name, index, list } } = this;
     return (
@@ -94,15 +136,13 @@ class OrderHistory extends Component {
         </Header>
         
         <Content padder>
-          <Accordion
-            sections={SECTIONS}
-            renderHeader={this._renderHeader}
-            renderContent={this._renderContent}
-            />
+          {
+            this._renderBodyContent()
+          }
         </Content>
       </Container>
     );
   }
 }
 
-export default OrderHistory;
+export default connect (mapStateToProps, mapDispatchToProps) (OrderHistory);
