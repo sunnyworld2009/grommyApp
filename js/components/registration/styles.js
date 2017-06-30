@@ -21,8 +21,8 @@ export default {
   bg: {
     flex: 1,
     paddingTop: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 25,
+    paddingRight: 45,
     paddingBottom: 30,
     bottom: 0,
   },

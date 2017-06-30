@@ -25,6 +25,7 @@ import {
   Item,
 } from "native-base";
 import ImagePicker from 'react-native-image-picker';
+import TextField from 'react-native-md-textinput';
 
 import styles from "./styles";
 
@@ -102,18 +103,6 @@ class Registration extends Component {
   
   onRegisterPress() {
     
-    console.log("Name is ",this.state.name);
-    console.log("Name is ",this.state.license);
-    console.log("Name is ",this.state.expiry);
-    console.log("Name is ",this.state.model);
-    console.log("Name is ",this.state.carNumber);
-    console.log("Name is ",this.state.contactNumber);
-    console.log("Name is ",this.state.city);
-    console.log("Name is ",this.state.address);
-    console.log("Name is ",this.state.email);
-    console.log("Name is ",this.state.username);
-    console.log("Name is ",this.state.password);
-    
     if(!this.state.name || !this.state.license || !this.state.expiry || !this.state.model || !this.state.carNumber || !this.state.contactNumber
       || !this.state.city || !this.state.address || !this.state.email || !this.state.username || !this.state.password
       || !this.state.avatarSource ) {
@@ -128,7 +117,6 @@ class Registration extends Component {
         
         let self = this;
         
-        console.log(this.state.avatarSource);
         const formdata = new FormData();
         formdata.append("driver_name", this.state.name);
         formdata.append("driver_licence", this.state.license);
@@ -187,123 +175,133 @@ class Registration extends Component {
           </Header>
           
           <Content padder>
+            
             <View style={styles.bg}>
-              <List>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({name: text})}
-                      value={this.state.name}
-                      placeholder={"Driver name"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({license: text})}
-                      value={this.state.license}
-                      placeholder={"Driver Licence"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({expiry: text})}
-                      value={this.state.expiry}
-                      placeholder={"Driver Expiry"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({model: text})}
-                      value={this.state.model}
-                      placeholder={"Driver Model"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({carNumber: text})}
-                      value={this.state.carNumber}
-                      placeholder={"Driver Car Number"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({contactNumber: text})}
-                      value={this.state.contactNumber}
-                      placeholder={"Driver Contact"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({city: text})}
-                      value={this.state.city}
-                      placeholder={"Driver City"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({address: text})}
-                      value={this.state.address}
-                      placeholder={"Driver Address"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({email: text})}
-                      value={this.state.email}
-                      placeholder={"Driver Email"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({username: text})}
-                      value={this.state.username}
-                      placeholder={"Driver Username"} />
-                  </InputGroup>
-                </ListItem>
-                <ListItem>
-                  <InputGroup>
-                    <Input
-                      onChangeText={(text) => this.setState({password: text})}
-                      value={this.state.password}
-                      secureTextEntry={true}
-                      placeholder={"Driver Password"} />
-                  </InputGroup>
-                </ListItem>
-                
-                <View style={styles.accordionHeader}>
-                  <View style={{justifyContent: 'center', flex: 2}}>
-                    <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
-                      <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
-                        <Text style={{color: '#575757'}}>Select a Photo</Text>
-                      </View>
-                    </TouchableOpacity>
-                  </View>
-                  <View style={{paddingHorizontal: 10, flex: 1}}>
-                    {
-                      this.state.avatarSource === null ?
-                      <Thumbnail source={{ uri: 'https://www.heartlandhealthcenters.org/wp-content/themes/twentytwelve-child/images/user_default.png' }} /> :
-                        <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
-                          <Image style={styles.avatar} source={this.state.avatarSource} />
-                        </View>
-                      }
-                      
+              <TextField
+                label={'Driver Name'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({name: text})
+                }}
+                value={this.state.name}
+                height={40}
+                />
+              <TextField
+                label={'Driver License'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({license: text})
+                }}
+                value={this.state.license}
+                height={40}
+                />
+              <TextField
+                label={'Driver Expiry'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({expiry: text})
+                }}
+                value={this.state.expiry}
+                height={40}
+                />
+              <TextField
+                label={'Driver Model'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({model: text})
+                }}
+                value={this.state.model}
+                height={40}
+                />
+              <TextField
+                label={'Driver Car Number'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({carNumber: text})
+                }}
+                value={this.state.carNumber}
+                height={40}
+                />
+              <TextField
+                label={'Driver Contact'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({contactNumber: text})
+                }}
+                value={this.state.contactNumber}
+                height={40}
+                keyboardType={'numeric'}
+                />
+              <TextField
+                label={'Driver City'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({city: text})
+                }}
+                value={this.state.city}
+                height={40}
+                />
+              <TextField
+                label={'Driver Address'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({address: text})
+                }}
+                value={this.state.address}
+                height={40}
+                />
+              <TextField
+                label={'Driver Email'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({email: text})
+                }}
+                value={this.state.email}
+                height={40}
+                />
+              <TextField
+                label={'Driver Username'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({username: text})
+                }}
+                value={this.state.username}
+                height={40}
+                />
+              <TextField
+                label={'Driver Password'}
+                highlightColor={'#00BCD4'}
+                onChangeText={(text) => {
+                  this.setState({password: text})
+                }}
+                value={this.state.password}
+                height={40}
+                />
+              
+              <View style={styles.accordionHeader}>
+                <View style={{justifyContent: 'center', flex: 2}}>
+                  <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
+                    <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
+                      <Text style={{color: '#575757'}}>Select a Photo</Text>
                     </View>
+                  </TouchableOpacity>
+                </View>
+                <View style={{paddingHorizontal: 10, flex: 1}}>
+                  {
+                    this.state.avatarSource === null ?
+                    <Thumbnail source={{ uri: 'https://www.heartlandhealthcenters.org/wp-content/themes/twentytwelve-child/images/user_default.png' }} /> :
+                      <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
+                        <Image style={styles.avatar} source={this.state.avatarSource} />
+                      </View>
+                    }
+                    
                   </View>
-                  <ListItem>
-                    {
-                      this.state.showError && <Text style={{ color: 'red' }}>All Fields are mandatory</Text>
-                  }
-                </ListItem>
-              </List>
+                </View>
+                <ListItem>
+                  {
+                    this.state.showError && <Text style={{ color: 'red' }}>All Fields are mandatory</Text>
+                }
+              </ListItem>
               <Button
                 block
                 style={styles.btn}
