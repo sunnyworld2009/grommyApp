@@ -8,9 +8,10 @@ export const updateBookingData = (responseData) => ({
 });
 
 
-export function getCurrentBookingData(driverId:string):Action {
+export function getCurrentBookingData(driver_id) {
+  console.log("driver id is ", driver_id);
   const formdata = new FormData();
-  formdata.append("driver_id", driverId);
+  formdata.append("driver_id", driver_id);
   
   return (dispatch) => {
     fetch("http://hairdiction.technoplanetsoftwares.com/web/getassignedorders.php", {

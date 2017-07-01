@@ -72,7 +72,9 @@ class Home extends Component {
   };
   
   componentWillMount() {
-    this.props.getCurrentBookingData(this.props.userData.driver_id);
+    console.log("driver id is ",this.props.userData.driver_id);
+    const driver_id = this.props.userData.driver_id;
+    this.props.getCurrentBookingData(driver_id);
   }
   
   newPage(index) {
@@ -81,13 +83,14 @@ class Home extends Component {
   }
   
   _renderHeader(section) {
+    console.log("header section is ", section);
     return (
       <View style={styles.accordionHeader}>
         <View style={{paddingHorizontal: 10, flex: 1}}>
-          <Thumbnail source={{uri: 'https://www.heartlandhealthcenters.org/wp-content/themes/twentytwelve-child/images/user_default.png'}} />
+          <Thumbnail source={{uri: section.photo}} />
         </View>
         <View style={{justifyContent: 'center', flex: 2}}>
-          <Text note>Booking 1</Text>
+          <Text note>Booking Id - { section.id }</Text>
         </View>
       </View>
     );
@@ -98,19 +101,19 @@ class Home extends Component {
       <View style={styles.accordionBody}>
         <Content>
           <ListItem >
-            <Text>Client Name - XYZ</Text>
+            <Text>Client Name - { section.name }</Text>
           </ListItem>
           <ListItem>
-            <Text>Client Location - XYZ</Text>
+            <Text>Client Location - { section.pickup_loc }</Text>
           </ListItem>
           <ListItem>
-            <Text>Estimated Time - XYZ</Text>
+            <Text>Estimated Time - { section.pickuptime }</Text>
           </ListItem>
           <ListItem>
-            <Text>Pickup & Drop Coordinates - XYZ </Text>
+            <Text>Drop Location - { section.drop_loc } </Text>
           </ListItem>
           <ListItem>
-            <Text>Payment Mode - XYZ</Text>
+            <Text>Price - { section.price }</Text>
           </ListItem>
         </Content>
       </View>
@@ -130,8 +133,9 @@ class Home extends Component {
       );
     }
     return (
+      !!this.props.bookingData && !_.isEmpty(this.props.bookingData.orders) &&
       <Accordion
-        sections={SECTIONS}
+        sections={this.props.bookingData.orders}
         renderHeader={this._renderHeader}
         renderContent={this._renderContent}
         />
@@ -178,7 +182,7 @@ function bindAction(dispatch) {
   return {
     setIndex: index => dispatch(setIndex(index)),
     openDrawer: () => dispatch(openDrawer()),
-    getCurrentBookingData: () => dispatch(getCurrentBookingData())
+    getCurrentBookingData: (driver_id) => dispatch(getCurrentBookingData(driver_id))
   };
 }
 

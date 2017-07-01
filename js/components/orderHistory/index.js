@@ -66,24 +66,23 @@ class OrderHistory extends Component {
   }
   
   _renderContent(section) {
-    console.log(this.props.previousOrders);
     return (
       <View style={styles.accordionBody}>
         <Content>
           <ListItem >
-            <Text>Client Name - XYZ</Text>
+            <Text>Client Name - { section.name }</Text>
           </ListItem>
           <ListItem>
-            <Text>Client Location - XYZ</Text>
+            <Text>Client Location - { section.pickup_loc }</Text>
           </ListItem>
           <ListItem>
-            <Text>Estimated Time - XYZ</Text>
+            <Text>Estimated Time - { section.pickuptime }</Text>
           </ListItem>
           <ListItem>
-            <Text>Pickup & Drop Coordinates - XYZ </Text>
+            <Text>Drop Location - { section.drop_loc } </Text>
           </ListItem>
           <ListItem>
-            <Text>Payment Mode - XYZ</Text>
+            <Text>Price - { section.price }</Text>
           </ListItem>
         </Content>
       </View>
@@ -91,9 +90,9 @@ class OrderHistory extends Component {
   }
   
   _renderBodyContent() {
-    if(Object.keys(this.props.previousOrders).length === 0) {
+    if(!!this.props.previousOrders && Object.keys(this.props.previousOrders).length === 0) {
       return <ActivityIndicator size='large'/>
-    } else if(this.props.previousOrders.message === "not_available") {
+    } else if(!!this.props.previousOrders && this.props.previousOrders.message === "not_available") {
       return (
         <View style={{ padding: 30}}>
           <Text style={{ fontSize: 25, fontWeight: 'bold', alignSelf: 'center' }}>
@@ -104,7 +103,7 @@ class OrderHistory extends Component {
     }
     return (
       <Accordion
-        sections={SECTIONS}
+        sections={this.props.previousOrders.orders}
         renderHeader={this._renderHeader}
         renderContent={this._renderContent}
         />
