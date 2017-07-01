@@ -66,6 +66,7 @@ class OrderHistory extends Component {
   }
   
   _renderContent(section) {
+    console.log(this.props.previousOrders);
     return (
       <View style={styles.accordionBody}>
         <Content>

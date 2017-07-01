@@ -2,6 +2,7 @@ import type { Action } from './types';
 
 export const SET_WALLET_AMOUNT = 'SET_WALLET_AMOUNT';
 export const SET_TRANSACTION_DATA = 'SET_TRANSACTION_DATA';
+export const UPDATE_WALLET_AMOUNT = 'UPDATE_WALLET_AMOUNT';
 
 export const updateWalletData = (responseData) => ({
   type: SET_WALLET_AMOUNT,
@@ -10,6 +11,11 @@ export const updateWalletData = (responseData) => ({
 
 export const updateTransactionData = (responseData) => ({
   type: SET_WALLET_AMOUNT,
+  payload: responseData
+});
+
+export const updateWalletAmount = (responseData) => ({
+  type: UPDATE_WALLET_AMOUNT,
   payload: responseData
 });
 
@@ -50,6 +56,26 @@ export function getTransactionData(driverId) {
     .then((responseData) => {
       console.log(responseData);
       dispatch(updateTransactionData(responseData));
+    })
+  }
+}
+
+export function setWithDrawAmount(driverId, amount) {
+  const formdata = new FormData();
+  formdata.append("driver_id", driverId);
+  formdata.append("amount", amount);
+  
+  return (dispatch) => {
+    fetch("http://hairdiction.technoplanetsoftwares.com/web/withdraw.php", {
+      method: 'post',
+      body: formdata
+    }).then((response) => response.json())
+    .catch((error) => {
+      console.log("ERROR " + error)
+    })
+    .then((responseData) => {
+      console.log(responseData);
+      dispatch(updateWalletAmount(responseData));
     })
   }
 }
