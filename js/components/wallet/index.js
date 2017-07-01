@@ -54,6 +54,7 @@ class Wallet extends Component {
       isDisabled: false,
       amount: 0,
       showError: false,
+      showUpdateMsg: false
     };
   }
   
@@ -65,11 +66,14 @@ class Wallet extends Component {
     console.log("amount is ", this.state.amount);
     console.log("wallet is ", this.props.walletAmount[0].amount);
     if(!!this.props.walletAmount[0] && parseFloat(this.props.walletAmount[0].amount) >= parseFloat(this.state.amount)) {
-      console.log("Good to go");
       this.setState({
         showError: false
       });
       this.props.setWithDrawAmount(this.props.userData.driver_id, this.state.amount);
+      this.setState({
+        showUpdateMsg: true
+      });
+      this.refs.modal2.close();
     } else {
       this.setState({
         showError: true
@@ -78,10 +82,8 @@ class Wallet extends Component {
   }
   
   onChanged(text) {
-    console.log("code herreee");
     // code to remove non-numeric characters from text
     text = text.replace(/\D/g,'');
-    console.log("text is ", text);
     this.setState({amount: text});
   }
   
@@ -123,82 +125,87 @@ class Wallet extends Component {
           <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
             <Text style={{ fontSize: 25 }}>$ { !!this.props.walletAmount[0] && this.props.walletAmount[0].amount }</Text>
           </View>
-        </Card>
-        { this._showTransactions() }
-        
-        <Button
-          block
-          onPress={() => this.refs.modal2.open()}
-          >
-          <Text>Withdraw Request</Text>
-        </Button>
-      </View>
-    );
-    
-  }
-  
-  render() {
-    const { props: { name, index, list } } = this;
-    return (
-      <Container>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="ios-arrow-back" />
-            </Button>
-          </Left>
-          
-          <Body>
-            <Title>Wallet</Title>
-          </Body>
-          
-          <Right>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-              >
-              <Icon name="ios-menu" />
-            </Button>
-          </Right>
-        </Header>
-        
-        <Content padder>
-          { this._renderBodyContent() }
-        </Content>
-        <Modal style={[styles.modal2]} backdrop={false}  position={"center"} ref={"modal2"}>
-          <View style={styles.modal}>
-            <TextField
-              label={'Amount To Withdraw'}
-              highlightColor={'#00BCD4'}
-              onChangeText = {(text)=> this.onChanged(text)}
-              keyboardType={'numeric'}
-              value={this.state.amount}
-              height={40}
-              />
-            <View>
-              {
-                this.state.showError && <Text style={{ color: 'red' }}>Please enter Amount less than Wallet Amount</Text>
-            }
-          </View>
-          <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'stretch' }}>
-            <Button
-              block
-              onPress={() => this.refs.modal2.close()}
-              >
-              <Text>Cancel</Text>
-            </Button>
-            <Button
-              style={{ marginLeft: 5 }}
-              block
-              onPress={() => this.withdrawRequest()}
-              >
-              <Text>Ok</Text>
-            </Button>
-          </View>
+          <View>
+            {
+              this.state.showUpdateMsg && <Text style={{ color: 'blue', paddingLeft: 20 }}>Amount Withdraw Requested - { this.state.amount }</Text>
+          }
         </View>
-      </Modal>
-    </Container>
+      </Card>
+      { this._showTransactions() }
+      
+      <Button
+        block
+        onPress={() => this.refs.modal2.open()}
+        >
+        <Text>Withdraw Request</Text>
+      </Button>
+    </View>
   );
+  
+}
+
+render() {
+  const { props: { name, index, list } } = this;
+  return (
+    <Container>
+      <Header>
+        <Left>
+          <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Icon name="ios-arrow-back" />
+          </Button>
+        </Left>
+        
+        <Body>
+          <Title>Wallet</Title>
+        </Body>
+        
+        <Right>
+          <Button
+            transparent
+            onPress={() => this.props.navigation.navigate("DrawerOpen")}
+            >
+            <Icon name="ios-menu" />
+          </Button>
+        </Right>
+      </Header>
+      
+      <Content padder>
+        { this._renderBodyContent() }
+      </Content>
+      <Modal style={[styles.modal2]} backdrop={false}  position={"center"} ref={"modal2"}>
+        <View style={styles.modal}>
+          <TextField
+            label={'Amount To Withdraw'}
+            highlightColor={'#00BCD4'}
+            onChangeText = {(text)=> this.onChanged(text)}
+            keyboardType={'numeric'}
+            value={this.state.amount}
+            height={40}
+            />
+          <View>
+            {
+              this.state.showError && <Text style={{ color: 'red' }}>Please enter Amount less than Wallet Amount</Text>
+          }
+        </View>
+        <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'stretch' }}>
+          <Button
+            block
+            onPress={() => this.refs.modal2.close()}
+            >
+            <Text>Cancel</Text>
+          </Button>
+          <Button
+            style={{ marginLeft: 5 }}
+            block
+            onPress={() => this.withdrawRequest()}
+            >
+            <Text>Ok</Text>
+          </Button>
+        </View>
+      </View>
+    </Modal>
+  </Container>
+);
 }
 }
 
