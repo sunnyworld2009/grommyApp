@@ -5,6 +5,7 @@ import user from "./user";
 import list from "./list";
 import home from "./homeReducer";
 import orderHistory from "./orderHistoryReducer";
+import wallet from "./walletReducer";
 
 export default combineReducers({
   form: formReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
   list,
   home,
   orderHistory,
+  wallet
 });

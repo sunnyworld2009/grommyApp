@@ -18,7 +18,6 @@ import { Field, reduxForm } from "redux-form";
 import { setUser } from "../../actions/user";
 import styles from "./styles";
 
-const background = require("../../../images/testimage.png");
 const background1 = require("../../../images/logo.png");
 
 const validate = values => {
