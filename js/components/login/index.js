@@ -109,9 +109,6 @@ class Login extends Component {
     );
   }
   render() {
-    if(!!this.props.userData && this.props.userData.message === "success") {
-      this.props.navigation.navigate("Home");
-    }
     return (
       <Container>
         <View style={styles.container}>

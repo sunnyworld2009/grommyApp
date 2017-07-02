@@ -9,6 +9,7 @@ import BlankPage2 from "../blankPage2";
 import Notifications from "../notifications";
 import Profile from "../profile";
 import OrderHistory from "../orderHistory";
+import Logout from "../logout";
 import Wallet from "../wallet";
 import DrawBar from "../DrawBar";
 import { DrawerNavigator, NavigationActions } from "react-navigation";
@@ -195,7 +196,8 @@ const DrawNav = DrawerNavigator(
     Notifications: { screen: Notifications },
     Profile: { screen: Profile },
     "Order History": { screen: OrderHistory },
-    Wallet: { screen: Wallet }
+    Wallet: { screen: Wallet },
+    Logout: { screen: Logout }
   },
   {
     contentComponent: props => <DrawBar {...props} />

@@ -10,7 +10,7 @@ import {
   Icon,
   Thumbnail,
 } from "native-base";
-const routes = ["Home", "Profile", "Order History", "Wallet"];
+const routes = ["Home", "Profile", "Order History", "Wallet", "Logout"];
 const background = require("../../../images/logo.png");
 export default class DrawBar extends React.Component {
   static navigationOptions = {
