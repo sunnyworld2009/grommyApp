@@ -177,112 +177,199 @@ class Registration extends Component {
           <Content padder>
             
             <View style={styles.bg}>
-              <TextField
-                label={'Driver Name'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({name: text})
-                }}
-                value={this.state.name}
-                height={40}
-                />
-              <TextField
-                label={'Driver License'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({license: text})
-                }}
-                value={this.state.license}
-                height={40}
-                />
-              <TextField
-                label={'Driver Expiry'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({expiry: text})
-                }}
-                value={this.state.expiry}
-                height={40}
-                />
-              <TextField
-                label={'Driver Model'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({model: text})
-                }}
-                value={this.state.model}
-                height={40}
-                />
-              <TextField
-                label={'Driver Car Number'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({carNumber: text})
-                }}
-                value={this.state.carNumber}
-                height={40}
-                />
-              <TextField
-                label={'Driver Contact'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({contactNumber: text})
-                }}
-                value={this.state.contactNumber}
-                height={40}
-                keyboardType={'numeric'}
-                />
-              <TextField
-                label={'Driver City'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({city: text})
-                }}
-                value={this.state.city}
-                height={40}
-                />
-              <TextField
-                label={'Driver Address'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({address: text})
-                }}
-                value={this.state.address}
-                height={40}
-                />
-              <TextField
-                label={'Driver Email'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({email: text})
-                }}
-                value={this.state.email}
-                height={40}
-                />
-              <TextField
-                label={'Driver Username'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({username: text})
-                }}
-                value={this.state.username}
-                height={40}
-                />
-              <TextField
-                label={'Driver Password'}
-                highlightColor={'#00BCD4'}
-                onChangeText={(text) => {
-                  this.setState({password: text})
-                }}
-                value={this.state.password}
-                height={40}
-                />
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='person' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                  label={'Driver Name'}
+                  highlightColor='white'
+                  labelColor='white'
+                  textColor='white'
+                  textFocusColor='white'
+                  onChangeText={(text) => {
+                    this.setState({name: text})
+                  }}
+                  value={this.state.name}
+                height={40} />
+                </View>                
+              </View>
+
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='document' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver License'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({license: text})
+                    }}
+                    value={this.state.license}
+                    height={40} />
+                </View>                
+              </View>
+
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='calendar' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver Expiry'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({expiry: text})
+                    }}
+                    value={this.state.expiry}
+                    height={40} />
+                </View>                
+              </View>
+            
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='car' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver Model'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({model: text})
+                    }}
+                    value={this.state.model}
+                    height={40} />
+                </View>                
+              </View>
+              
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='car' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver Car Number'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({carNumber: text})
+                    }}
+                    value={this.state.carNumber}
+                    height={40} />
+                </View>                
+              </View>
+              
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='call' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver Contact'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({contactNumber: text})
+                    }}
+                    value={this.state.contactNumber}
+                    height={40}
+                    keyboardType={'numeric'} />
+                </View>                
+              </View>
+
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='home' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver City'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({city: text})
+                    }}
+                    value={this.state.city}
+                    height={40} />
+                </View>                
+              </View>
+
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='home' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver Address'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({address: text})
+                    }}
+                    value={this.state.address}
+                    height={40} />
+                </View>                
+              </View>
+
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='mail' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver Email'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({email: text})
+                    }}
+                    value={this.state.email}
+                    height={40} />
+                </View>                
+              </View>
+
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='person' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver Username'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({username: text})
+                    }}
+                    value={this.state.username}
+                    height={40} />
+                </View>                
+              </View>         
+              
+              <View style={{ flex: 1, alignItems: 'stretch' ,flexDirection: "row"}} >
+                <View style={{ flex: 0.1, justifyContent: 'flex-end' }} ><Icon color='white' style={{ color: 'white' }} name='eye' /></View>
+                <View style={{ flex: 0.9, paddingLeft: 5 }}>
+                  <TextField
+                    label={'Driver Password'}
+                    highlightColor='white'
+                    labelColor='white'
+                    textColor='white'
+                    textFocusColor='white'
+                    onChangeText={(text) => {
+                      this.setState({password: text})
+                    }}
+                    value={this.state.password}
+                    height={40} />
+                </View>                
+              </View>     
               
               <View style={styles.accordionHeader}>
                 <View style={{justifyContent: 'center', flex: 2}}>
                   <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
                     <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
-                      <Text style={{color: '#575757'}}>Select a Photo</Text>
+                      <Text style={{color: 'white'}}>Select a Photo</Text>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -304,9 +391,11 @@ class Registration extends Component {
               </ListItem>
               <Button
                 block
+                iconLeft
                 style={styles.btn}
                 onPress={() => this.onRegisterPress()}
                 >
+                <Icon name='people' />
                 <Text>Register</Text>
               </Button>
             </View>

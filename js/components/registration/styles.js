@@ -11,7 +11,8 @@ export default {
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0
+    right: 0,
+    backgroundColor: '#1E90FF',
   },
   shadow: {
     flex: 1,
