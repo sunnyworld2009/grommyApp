@@ -1,6 +1,8 @@
 
 import type { Action, Dispatch } from './types';
 
+import SInfo from 'react-native-sensitive-info';
+
 export const SET_USER = 'SET_USER';
 
 export const updateUserData = (responseData) => ({
@@ -31,7 +33,16 @@ export function setUser(user:string):Action {
         console.log(responseData);
         dispatch(clearUserData());
         dispatch(updateUserData(responseData));
-      })
+        // SInfo.setItem('groomyUser', responseData, {});
+
+         SInfo.setItem('driver_username', user.email, {
+          sharedPreferencesName: 'SnappyGroom',
+          keychainService: 'SnappyGroom' });
+
+         SInfo.setItem('driver_password', user.password, {
+          sharedPreferencesName: 'SnappyGroom',
+          keychainService: 'SnappyGroom' }); 
+       });
     }
     
     

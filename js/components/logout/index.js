@@ -24,6 +24,7 @@ import {
   Thumbnail,
 } from "native-base";
 import Accordion from 'react-native-collapsible/Accordion';
+import SInfo from 'react-native-sensitive-info';
 
 import { DrawerNavigator, NavigationActions } from "react-navigation";
 
@@ -52,7 +53,16 @@ class Logout extends Component {
   };
   
   componentWillMount() {
+    SInfo.deleteItem('driver_username', {
+      sharedPreferencesName: 'SnappyGroom',
+      keychainService: 'SnappyGroom' });
+
+    SInfo.deleteItem('driver_password', {
+      sharedPreferencesName: 'SnappyGroom',
+      keychainService: 'SnappyGroom' });
+
     this.props.logout();
+
     const resetAction = NavigationActions.reset({
             index: 0,
             actions: [

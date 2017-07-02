@@ -19,7 +19,6 @@ export default function (state:State = initialState, action:Action): State {
     };
   }
   if (action.type === USER_LOGOUT) {
-    console.log("In logout reducer");
     return {
       ...state,
       data: action.payload,

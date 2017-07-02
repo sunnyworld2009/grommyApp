@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image } from "react-native";
+import { Image, ActivityIndicator, } from "react-native";
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 import _ from 'lodash';
@@ -17,6 +17,7 @@ import {
 import { Field, reduxForm } from "redux-form";
 import { setUser } from "../../actions/user";
 import styles from "./styles";
+import SInfo from 'react-native-sensitive-info';
 
 const background1 = require("../../../images/logo.png");
 
@@ -52,12 +53,39 @@ class Login extends Component {
     super(props);
     this.state = {
       name: "",
-      showError: false
+      showError: false,
+      showLoader: false
     };
     this.renderInput = this.renderInput.bind(this);
   }
+
+  componentWillMount() {
+    SInfo.getItem('driver_username', {
+      sharedPreferencesName: 'SnappyGroom',
+      keychainService: 'SnappyGroom' }).then((userName) => {
+        if(!!userName) {
+          this.setState({
+            showLoader: true
+          });
+          SInfo.getItem('driver_password', {
+            sharedPreferencesName: 'SnappyGroom',
+            keychainService: 'SnappyGroom' }).then((password) => {
+              if(!!password) {
+                this.props.setUser({
+                email: userName,
+                password: password
+              });
+              } else {
+                this.setState({
+                  showLoader: false
+                });
+              }
+            });
+        }
+      });;
+  }
   
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) { 
     if(!_.isEqual(this.props.formValues.test, nextProps.formValues.test)) {
       this.setState({
         showError: false
@@ -109,6 +137,13 @@ class Login extends Component {
     );
   }
   render() {
+    if(this.state.showLoader) {
+      return (
+        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+          <View><ActivityIndicator size='large'/></View>          
+        </View>
+      )
+    }
     return (
       <Container>
         <View style={styles.container}>

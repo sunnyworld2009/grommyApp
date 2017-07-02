@@ -23,6 +23,7 @@
     "react-native-md-textinput": "^2.0.4",
     "react-native-modal": "^2.4.0",
     "react-native-modalbox": "^1.4.0",
+    "react-native-sensitive-info": "^5.1.0",
     "react-navigation": "^1.0.0-beta.11",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
