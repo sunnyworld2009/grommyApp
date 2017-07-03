@@ -178,11 +178,14 @@ render() {
       <Content padder>
         { this._renderBodyContent() }
       </Content>
-      <Modal style={[styles.modal2]} backdrop={false}  position={"center"} ref={"modal2"}>
+        <Modal style={[styles.modal2]} backdrop={false}  position={"center"} ref={"modal2"}>
         <View style={styles.modal}>
           <TextField
             label={'Amount To Withdraw'}
-            highlightColor={'#00BCD4'}
+            highlightColor='white'
+            labelColor='white'
+            textColor='white'
+            textFocusColor='white'
             onChangeText = {(text)=> this.onChanged(text)}
             keyboardType={'numeric'}
             value={this.state.amount}
@@ -195,21 +198,23 @@ render() {
         </View>
         <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'stretch' }}>
           <Button
-            block
+            bordered 
+            info
             onPress={() => this.refs.modal2.close()}
             >
             <Text>Cancel</Text>
           </Button>
           <Button
-            style={{ marginLeft: 5 }}
-            block
+            style={{ marginLeft: 5, color: 'white', borderColor: 'white' }}
+            bordered 
             onPress={() => this.withdrawRequest()}
             >
-            <Text>Ok</Text>
+            <Text style={{ color: 'white' }}>Ok</Text>
           </Button>
         </View>
       </View>
     </Modal>
+      
   </Container>
 );
 }
@@ -228,8 +233,10 @@ const styles = StyleSheet.create({
   },
   
   modal2: {
-    height: 230,
-    backgroundColor: "white"
+    height: 200,
+    width: 300,
+    backgroundColor: "#3F51B5",
+    borderRadius: 5
   },
   
   modal3: {
