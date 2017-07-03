@@ -10,15 +10,18 @@ export default {
     flex: 1,
     flexGrow: 1,
     flexDirection: 'row',
-    borderWidth: 1,
-    borderColor: 'grey',
     marginTop: 10,
     padding:15
   },
   accordionBody: {
     flex: 1,
     flexGrow: 1,
-    borderWidth: 1,
-    borderColor: 'grey',
-  }
+    backgroundColor: '#1E90FF',
+  },
+  bg1: {
+    backgroundColor: '#3F51B5',
+  },
+  accordionText: {
+    color: 'white'
+  },
 };

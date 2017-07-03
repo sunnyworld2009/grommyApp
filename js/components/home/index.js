@@ -83,15 +83,22 @@ class Home extends Component {
     Actions.blankPage();
   }
   
-  _renderHeader(section) {
-    console.log("header section is ", section);
+  _renderHeader(section, index, isActive) {
+    console.log("header section is ", isActive);
     return (
-      <View style={styles.accordionHeader}>
+      <View style={[styles.accordionHeader, styles.bg1]}>
         <View style={{paddingHorizontal: 10, flex: 1}}>
           <Thumbnail source={{uri: section.photo}} />
         </View>
         <View style={{justifyContent: 'center', flex: 2}}>
-          <Text note>Booking Id - { section.id }</Text>
+          <Text style={ styles.accordionText } >Booking Id - { section.id }</Text>
+        </View>
+        <View style={{justifyContent: 'center', alignItems: 'flex-end', flex: 2}}>
+          {
+            isActive ?
+              <Icon active name="arrow-dropup" style={{ color: 'white' }} />
+             : <Icon active name="arrow-dropdown" style={{ color: 'white' }} /> 
+          }
         </View>
       </View>
     );
@@ -102,19 +109,19 @@ class Home extends Component {
       <View style={styles.accordionBody}>
         <Content>
           <ListItem >
-            <Text>Client Name - { section.name }</Text>
+            <Text style={ styles.accordionText }>Client Name - { section.name }</Text>
           </ListItem>
           <ListItem>
-            <Text>Client Location - { section.pickup_loc }</Text>
+            <Text style={ styles.accordionText }>Client Location - { section.pickup_loc }</Text>
           </ListItem>
           <ListItem>
-            <Text>Estimated Time - { section.pickuptime }</Text>
+            <Text style={ styles.accordionText }>Estimated Time - { section.pickuptime }</Text>
           </ListItem>
           <ListItem>
-            <Text>Drop Location - { section.drop_loc } </Text>
+            <Text style={ styles.accordionText }>Drop Location - { section.drop_loc } </Text>
           </ListItem>
           <ListItem>
-            <Text>Price - { section.price }</Text>
+            <Text style={ styles.accordionText }>Price - { section.price }</Text>
           </ListItem>
         </Content>
       </View>
@@ -138,15 +145,14 @@ class Home extends Component {
       <Accordion
         sections={this.props.bookingData.orders}
         renderHeader={this._renderHeader}
-        renderContent={this._renderContent}
-        />
+        renderContent={this._renderContent}/>
     );
   }
   
   render() {
     return (
       <Container style={styles.container}>
-        <Header>
+        <Header style={{ backgroundColor: '#303F9F' }}>
           <Left>
             <Button
               transparent

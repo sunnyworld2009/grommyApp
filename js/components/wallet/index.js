@@ -90,13 +90,14 @@ class Wallet extends Component {
   _showTransactions() {
     return !_.isEmpty(this.props.transactions) && this.props.transactions.map((transaction) => {
       return (
-        <Card>
+        <Card style={{ backgroundColor: '#1E90FF' }}>
           <List>
             <ListItem>
-              <Text style={{ fontSize: 15 }}>$ { transaction.deposite }</Text>
+              <Text style={{ fontSize: 15, color: 'white' }}>$ { transaction.deposite }</Text>
               <Body>
-                <Text>Booking Id - { transaction.tran_id } </Text>
-                <Text note>Name - { transaction.driver_name }</Text>
+                <Text style={{ color: 'white' }}>Booking Id - { transaction.tran_id } </Text>
+                <Text style={{ color: 'white' }}>Name - { transaction.driver_name }</Text>
+                <Text style={{ color: 'white' }}>Date - { transaction.createdat }</Text>
               </Body>
             </ListItem>
           </List>
@@ -122,8 +123,8 @@ class Wallet extends Component {
       <View>
         
         <Card>
-          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-            <Text style={{ fontSize: 25 }}>$ { !!this.props.walletAmount[0] && this.props.walletAmount[0].amount }</Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', backgroundColor: '#3F51B5' }}>
+            <Text style={{ fontSize: 25, color: 'white' }}>$ { !!this.props.walletAmount[0] && this.props.walletAmount[0].amount }</Text>
           </View>
           <View>
             {
@@ -132,13 +133,18 @@ class Wallet extends Component {
         </View>
       </Card>
       { this._showTransactions() }
+      {
+        !_.isEmpty(this.props.transactions) &&
+          <View style={{ paddingTop: 10, marginBottom: 30 }}>
+            <Button
+              block
+              onPress={() => this.refs.modal2.open()}
+              >
+              <Text>Withdraw Request</Text>
+            </Button>
+          </View>
+      }
       
-      <Button
-        block
-        onPress={() => this.refs.modal2.open()}
-        >
-        <Text>Withdraw Request</Text>
-      </Button>
     </View>
   );
   

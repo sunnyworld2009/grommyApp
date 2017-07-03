@@ -54,12 +54,18 @@ class OrderHistory extends Component {
     this.props.getOrderHistoryData(this.props.userData.driver_id);
   }
   
-  _renderHeader(section) {
+  _renderHeader(section, index, isActive) {
     return (
-      <View style={styles.accordionHeader}>
+      <View style={[styles.accordionHeader,styles.bg1]}>
         <View style={{alignItems: 'center', flex: 2 }}>
-          <Text style={{ fontSize: 20 }} note>Booking Details</Text>
-          <Icon name="ios-arrow-round-down" color='grey' />
+          <Text style={styles.accordionText}>Booking Details</Text>
+        </View>
+        <View style={{justifyContent: 'center', alignItems: 'flex-end', flex: 2}}>
+          {
+            isActive ?
+              <Icon active name="arrow-dropup" style={{ color: 'white' }} />
+             : <Icon active name="arrow-dropdown" style={{ color: 'white' }} /> 
+          }
         </View>
       </View>
     );
@@ -70,19 +76,19 @@ class OrderHistory extends Component {
       <View style={styles.accordionBody}>
         <Content>
           <ListItem >
-            <Text>Client Name - { section.name }</Text>
+            <Text style={styles.accordionText}>Client Name - { section.name }</Text>
           </ListItem>
           <ListItem>
-            <Text>Client Location - { section.pickup_loc }</Text>
+            <Text style={styles.accordionText}>Client Location - { section.pickup_loc }</Text>
           </ListItem>
           <ListItem>
-            <Text>Estimated Time - { section.pickuptime }</Text>
+            <Text style={styles.accordionText}>Estimated Time - { section.pickuptime }</Text>
           </ListItem>
           <ListItem>
-            <Text>Drop Location - { section.drop_loc } </Text>
+            <Text style={styles.accordionText}>Drop Location - { section.drop_loc } </Text>
           </ListItem>
           <ListItem>
-            <Text>Price - { section.price }</Text>
+            <Text style={styles.accordionText}>Price - { section.price }</Text>
           </ListItem>
         </Content>
       </View>
@@ -105,8 +111,7 @@ class OrderHistory extends Component {
       <Accordion
         sections={this.props.previousOrders.orders}
         renderHeader={this._renderHeader}
-        renderContent={this._renderContent}
-        />
+        renderContent={this._renderContent}/>
     );
   }
   
@@ -114,7 +119,7 @@ class OrderHistory extends Component {
     const { props: { name, index, list } } = this;
     return (
       <Container>
-        <Header>
+        <Header backgroundColor='#303F9F' style={{ backgroundColor: '#303F9F' }}>
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon name="ios-arrow-back" />
