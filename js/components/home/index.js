@@ -12,10 +12,11 @@ import OrderHistory from "../orderHistory";
 import Logout from "../logout";
 import Wallet from "../wallet";
 import DrawBar from "../DrawBar";
+import Header from '../core/header';
+import styleGuide from '../core/styleGuide';
 import { DrawerNavigator, NavigationActions } from "react-navigation";
 import {
   Container,
-  Header,
   Title,
   Content,
   Text,
@@ -86,12 +87,12 @@ class Home extends Component {
   _renderHeader(section, index, isActive) {
     console.log("header section is ", isActive);
     return (
-      <View style={[styles.accordionHeader, styles.bg1]}>
+      <View style={[styleGuide.accordionHeader]}>
         <View style={{paddingHorizontal: 10, flex: 1}}>
           <Thumbnail source={{uri: section.photo}} />
         </View>
         <View style={{justifyContent: 'center', flex: 2}}>
-          <Text style={ styles.accordionText } >Booking Id - { section.id }</Text>
+          <Text style={ styleGuide.accordionHeadText } >Booking Id - { section.id }</Text>
         </View>
         <View style={{justifyContent: 'center', alignItems: 'flex-end', flex: 2}}>
           {
@@ -106,22 +107,22 @@ class Home extends Component {
   
   _renderContent(section) {
     return (
-      <View style={styles.accordionBody}>
+      <View style={styleGuide.accordionBody}>
         <Content>
           <ListItem >
-            <Text style={ styles.accordionText }>Client Name - { section.name }</Text>
+            <Text style={ styleGuide.accordionText }>Client Name - { section.name }</Text>
           </ListItem>
           <ListItem>
-            <Text style={ styles.accordionText }>Client Location - { section.pickup_loc }</Text>
+            <Text style={ styleGuide.accordionText }>Client Location - { section.pickup_loc }</Text>
           </ListItem>
           <ListItem>
-            <Text style={ styles.accordionText }>Estimated Time - { section.pickuptime }</Text>
+            <Text style={ styleGuide.accordionText }>Estimated Time - { section.pickuptime }</Text>
           </ListItem>
           <ListItem>
-            <Text style={ styles.accordionText }>Drop Location - { section.drop_loc } </Text>
+            <Text style={ styleGuide.accordionText }>Drop Location - { section.drop_loc } </Text>
           </ListItem>
           <ListItem>
-            <Text style={ styles.accordionText }>Price - { section.price }</Text>
+            <Text style={ styleGuide.accordionText }>Price - { section.price }</Text>
           </ListItem>
         </Content>
       </View>
@@ -148,34 +149,16 @@ class Home extends Component {
         renderContent={this._renderContent}/>
     );
   }
+
+  _openDrawer() {
+    DrawerNav.navigate("DrawerOpen");
+  }
   
   render() {
     return (
       <Container style={styles.container}>
-        <Header style={{ backgroundColor: '#303F9F' }}>
-          <Left>
-            <Button
-              transparent
-              onPress={() => DrawerNav.navigate("DrawerOpen")}
-              >
-              <Icon active name="menu" />
-            </Button>
-          </Left>
-          
-          <Body>
-            <Title>Home</Title>
-          </Body>
-          
-          <Right>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("Notifications")}
-              >
-              <Icon active name="notifications" />
-            </Button>
-          </Right>
-        </Header>
-        <Content style={{ padding: 15 }}>
+        <Header isHomePage openDrawer={this._openDrawer} navigation={ this.props.navigation } />
+        <Content style={{ padding: 15, backgroundColor: "#EEEEEE" }}>
           {
             this._renderBodyContent()
           }
@@ -206,6 +189,7 @@ const DrawNav = DrawerNavigator(
     Logout: { screen: Logout }
   },
   {
+    drawerWidth: 160,
     contentComponent: props => <DrawBar {...props} />
 }
 );

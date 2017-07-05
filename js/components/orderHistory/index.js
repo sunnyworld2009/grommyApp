@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import {
   Container,
-  Header,
   Title,
   Content,
   Text,
@@ -24,6 +23,8 @@ import {
   Thumbnail,
 } from "native-base";
 import styles from "./styles";
+import Header from '../core/header';
+import styleGuide from '../core/styleGuide';
 import Accordion from 'react-native-collapsible/Accordion';
 
 import { getOrderHistoryData } from "../../actions/orderHistoryAction";
@@ -56,9 +57,9 @@ class OrderHistory extends Component {
   
   _renderHeader(section, index, isActive) {
     return (
-      <View style={[styles.accordionHeader,styles.bg1]}>
+      <View style={[styleGuide.accordionHeader]}>
         <View style={{alignItems: 'center', flex: 2 }}>
-          <Text style={styles.accordionText}>Booking Details</Text>
+          <Text style={styleGuide.accordionHeadText}>Booking Details</Text>
         </View>
         <View style={{justifyContent: 'center', alignItems: 'flex-end', flex: 2}}>
           {
@@ -73,22 +74,22 @@ class OrderHistory extends Component {
   
   _renderContent(section) {
     return (
-      <View style={styles.accordionBody}>
+      <View style={styleGuide.accordionBody}>
         <Content>
           <ListItem >
-            <Text style={styles.accordionText}>Client Name - { section.name }</Text>
+            <Text style={styleGuide.accordionText}>Client Name - { section.name }</Text>
           </ListItem>
           <ListItem>
-            <Text style={styles.accordionText}>Client Location - { section.pickup_loc }</Text>
+            <Text style={styleGuide.accordionText}>Client Location - { section.pickup_loc }</Text>
           </ListItem>
           <ListItem>
-            <Text style={styles.accordionText}>Estimated Time - { section.pickuptime }</Text>
+            <Text style={styleGuide.accordionText}>Estimated Time - { section.pickuptime }</Text>
           </ListItem>
           <ListItem>
-            <Text style={styles.accordionText}>Drop Location - { section.drop_loc } </Text>
+            <Text style={styleGuide.accordionText}>Drop Location - { section.drop_loc } </Text>
           </ListItem>
           <ListItem>
-            <Text style={styles.accordionText}>Price - { section.price }</Text>
+            <Text style={styleGuide.accordionText}>Price - { section.price }</Text>
           </ListItem>
         </Content>
       </View>
@@ -119,26 +120,7 @@ class OrderHistory extends Component {
     const { props: { name, index, list } } = this;
     return (
       <Container>
-        <Header backgroundColor='#303F9F' style={{ backgroundColor: '#303F9F' }}>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="ios-arrow-back" />
-            </Button>
-          </Left>
-          
-          <Body>
-            <Title>Order History</Title>
-          </Body>
-          
-          <Right>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-              >
-              <Icon name="ios-menu" />
-            </Button>
-          </Right>
-        </Header>
+        <Header navigation={ this.props.navigation } />
         
         <Content padder>
           {
