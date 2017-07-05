@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { View, Image } from 'react-native';
 import {
   Container,
-  Header,
   Title,
   Content,
   Text,
@@ -18,6 +17,7 @@ import {
   CardItem,
   Thumbnail,
 } from "native-base";
+import Header from '../core/header';
 
 const mapStateToProps = state => ({
   userData: state.user.data,
@@ -34,26 +34,7 @@ class Profile extends Component {
     const userData =  this.props.userData;
     return (
       <Container>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="ios-arrow-back" />
-            </Button>
-          </Left>
-          
-          <Body>
-            <Title>Profile</Title>
-          </Body>
-          
-          <Right>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-              >
-              <Icon name="ios-menu" />
-            </Button>
-          </Right>
-        </Header>
+        <Header navigation={ this.props.navigation } />
         
         <Content padder>
           <Card style={{flex: 0}}>

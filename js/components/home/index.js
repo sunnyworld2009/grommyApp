@@ -37,25 +37,6 @@ import { getCurrentBookingData } from "../../actions/homeAction";
 import styles from "./styles";
 import Accordion from 'react-native-collapsible/Accordion';
 
-const SECTIONS = [
-  {
-    title: 'First',
-    content: 'Lorem ipsum...',
-  },
-  {
-    title: 'Second',
-    content: 'Lorem ipsum...',
-  },
-  {
-    title: 'Second',
-    content: 'Lorem ipsum...',
-  },
-  {
-    title: 'Second',
-    content: 'Lorem ipsum...',
-  }
-];
-
 const mapStateToProps = state => ({
   userData: state.user.data,
   list: state.list.list,

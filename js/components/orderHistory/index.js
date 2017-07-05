@@ -29,13 +29,6 @@ import Accordion from 'react-native-collapsible/Accordion';
 
 import { getOrderHistoryData } from "../../actions/orderHistoryAction";
 
-const SECTIONS = [
-  {
-    title: 'First',
-    content: 'Lorem ipsum...',
-  }
-];
-
 const mapStateToProps = state => ({
   userData: state.user.data,
   list: state.list.list,

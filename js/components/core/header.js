@@ -30,7 +30,7 @@ export default class AppHeader extends Component {
               transparent
               onPress={() => this.props.openDrawer()}
               >
-              <Icon active name="menu" />
+              <Icon active name="list" />
             </Button>
           </Left>
           
