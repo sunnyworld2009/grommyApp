@@ -113,7 +113,7 @@ class OrderHistory extends Component {
     const { props: { name, index, list } } = this;
     return (
       <Container>
-        <Header navigation={ this.props.navigation } />
+        <Header name="Order History" navigation={ this.props.navigation } />
         
         <Content padder>
           {

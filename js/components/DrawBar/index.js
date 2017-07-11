@@ -1,5 +1,6 @@
 import React from "react";
 import { AppRegistry, Image, TouchableOpacity, View } from "react-native";
+import { connect } from "react-redux";
 import {
   Button,
   Text,
@@ -33,28 +34,42 @@ const routes = [
   iconName: "log-out"
 }
 ];
+
 const background = require("../../../images/logo.png");
-export default class DrawBar extends React.Component {
+
+const mapStateToProps = state => ({
+  userData: state.user.data,
+});
+
+class DrawBar extends React.Component {
   static navigationOptions = {
     header: null
   };
   render() {
+    const userData =  !!this.props.userData && this.props.userData;
+    console.log("userdata is ", userData);
     return (
       <Container style={{ backgroundColor: '#1976D2' }}>
         <Content>
-          <Image style={{ height: 100, width: 100, alignSelf: 'center' }} source={{uri: 'https://www.heartlandhealthcenters.org/wp-content/themes/twentytwelve-child/images/user_default.png'}} />
-          <View style={{ marginTop: 20 }}>
+        {
+          !this.props.userData ?
+            <Image style={{height: 100, width: 100, alignSelf: 'center', marginTop: 10 }} source={{uri: 'https://www.heartlandhealthcenters.org/wp-content/themes/twentytwelve-child/images/user_default.png'}} />
+           : 
+            <Image style={{height: 100, width: 100, alignSelf: 'center', marginTop: 10 }} source={{uri: this.props.userData.driver_photo}} />
+        }
+          <View style={{ marginTop: 20, borderTopColor: 'white', borderTopWidth: 1 }}>
             <List
               dataArray={routes}
               renderRow={data => {
                 return (
                   <ListItem
+                    style={{borderBottomWidth: 0}}
                     button
                     onPress={() => this.props.navigation.navigate(data.name)}
                     >
                     <View style={{ flex: 1, justifyContent: 'center' }}>
                     <Icon name={ data.iconName } style={{ color: "white", alignSelf: "center" }} />
-                      <Text style={{fontSize: 20, color: 'white', alignSelf: 'center'}}>{data.name}</Text>
+                      <Text style={{fontSize: 17, color: 'white', alignSelf: 'center'}}>{data.name}</Text>
                     </View>
                   </ListItem>
                 );
@@ -65,3 +80,5 @@ export default class DrawBar extends React.Component {
     );
   }
 }
+
+export default connect (mapStateToProps, null) (DrawBar);

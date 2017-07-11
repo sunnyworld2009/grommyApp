@@ -56,7 +56,11 @@ export default class AppHeader extends Component {
           </Left>
           
           <Body>
-            <Title>Order History</Title>
+            <Title>
+              {
+                !!this.props.name && this.props.name
+              }
+            </Title>
           </Body>
           
           <Right>

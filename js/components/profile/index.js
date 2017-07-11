@@ -34,7 +34,7 @@ class Profile extends Component {
     const userData =  this.props.userData;
     return (
       <Container>
-        <Header navigation={ this.props.navigation } />
+        <Header name="Profile" navigation={ this.props.navigation } />
         
         <Content padder>
           <Card style={{flex: 0}}>

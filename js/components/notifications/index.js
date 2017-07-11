@@ -23,7 +23,7 @@ class Notifications extends Component {
     const { props: { name, index, list } } = this;
     return (
       <Container>
-        <Header navigation={ this.props.navigation } />
+        <Header name="Wallet" navigation={ this.props.navigation } />
 
         <Content padder>
           <List>

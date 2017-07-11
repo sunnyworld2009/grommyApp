@@ -154,7 +154,7 @@ render() {
   const { props: { name, index, list } } = this;
   return (
     <Container>
-      <Header navigation={ this.props.navigation } />
+      <Header name="Wallet" navigation={ this.props.navigation } />
       
       <Content padder>
         { this._renderBodyContent() }
@@ -163,10 +163,10 @@ render() {
         <View style={styles.modal}>
           <TextField
             label={'Amount To Withdraw'}
-            highlightColor='white'
-            labelColor='white'
-            textColor='white'
-            textFocusColor='white'
+            highlightColor='black'
+            labelColor='black'
+            textColor='#4B0082'
+            textFocusColor='#4B0082'
             onChangeText = {(text)=> this.onChanged(text)}
             keyboardType={'numeric'}
             value={this.state.amount}
@@ -179,18 +179,18 @@ render() {
         </View>
         <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'stretch' }}>
           <Button
-            bordered 
-            info
+            style={{ marginLeft: 5, color: '#4B0082', borderColor: 'white' }}
+            bordered
             onPress={() => this.refs.modal2.close()}
             >
-            <Text>Cancel</Text>
+            <Text style={{ color: '#4B0082' }}>Cancel</Text>
           </Button>
           <Button
-            style={{ marginLeft: 5, color: 'white', borderColor: 'white' }}
+            style={{ marginLeft: 5, color: '#4B0082', borderColor: 'white' }}
             bordered 
             onPress={() => this.withdrawRequest()}
             >
-            <Text style={{ color: 'white' }}>Ok</Text>
+            <Text style={{ color: '#4B0082' }}>Ok</Text>
           </Button>
         </View>
       </View>
@@ -214,12 +214,11 @@ const styles = StyleSheet.create({
   },
   
   modal2: {
-    height: 200,
+    height: 150,
     width: 300,
-    backgroundColor: "#3F51B5",
+    backgroundColor: "white",
     borderRadius: 5
   },
-  
   modal3: {
     height: 300,
     width: 300

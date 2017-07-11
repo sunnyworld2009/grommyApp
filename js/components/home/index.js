@@ -170,7 +170,7 @@ const DrawNav = DrawerNavigator(
     Logout: { screen: Logout }
   },
   {
-    drawerWidth: 160,
+    drawerWidth: 150,
     contentComponent: props => <DrawBar {...props} />
 }
 );
