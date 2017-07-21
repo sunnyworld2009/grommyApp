@@ -5,13 +5,14 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
-		00E356F31AD99517003FC87E /* NativeStarterKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NativeStarterKitTests.m */; };
+		00E356F31AD99517003FC87E /* snappyGroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* snappyGroomTests.m */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -32,49 +33,9 @@
 		2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E941DF850E9000B6D8A /* libRCTText-tvOS.a */; };
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
-		2DCD954D1E0B4F2C00145EB5 /* NativeStarterKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NativeStarterKitTests.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* snappyGroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* snappyGroomTests.m */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		A21B40C6614B4D55815186A4 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BE0DD2581F458D9515D6F3 /* libCodePush.a */; };
-		8013716853094B8FA85F4499 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E601CF4F424C34AEE1B2AD /* libz.tbd */; };
-		872091C8D2114B9D9DD0B541 /* Andale Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5355A8CB93664F7D9C8A74BE /* Andale Mono.ttf */; };
-		ADE68986A7684BA8863CF7E0 /* Arial Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02A4BACC5BB041C1B5042752 /* Arial Black.ttf */; };
-		FC13C0B05005406B93B17E9F /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A35A66FDC73A4ACCA5455EBB /* Arial.ttf */; };
-		E42C58C908584CCFB0B5A987 /* Comic Sans MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 545562C0D137413D80809E6B /* Comic Sans MS.ttf */; };
-		9CC3487C95F34B4B9D8FF3F6 /* Courier New.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AED09E565FD642898171A4DA /* Courier New.ttf */; };
-		F0C53DA4F10E443BA10C86BC /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E6A9BAB3780431DB120CC66 /* Entypo.ttf */; };
-		FB656AA50F3745F6830C73FE /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C60577FB1904EB68BF57F34 /* EvilIcons.ttf */; };
-		033D8FEB4356477897A180CD /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 806AEEB410704EC5B65799F8 /* FontAwesome.ttf */; };
-		850FC8C622D2407A83DAA2F7 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C87C6A025F8B4E2BB98BCBD2 /* Foundation.ttf */; };
-		6C81BAC5D09B43CB83FBA07D /* Georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22277DD338214F11BD8B078F /* Georgia.ttf */; };
-		E59802299DB54362916CF637 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 480A5CD31B5545FAA599078E /* Ionicons.ttf */; };
-		BD9624342FDC43DB9691E453 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE5C85CA5BE24D838E276261 /* MaterialIcons.ttf */; };
-		F1B2721BCA20434385F7A54A /* Microsoft Sans Serif.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44B9C95CD689471AA89C919B /* Microsoft Sans Serif.ttf */; };
-		47EC7067813645549C78544A /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82591B37FCD54EBCBC6675AE /* Octicons.ttf */; };
-		045C8C62E3E640288C2712F7 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A39027A99DD4C84A9EBE2A0 /* Roboto_medium.ttf */; };
-		C9A167AF675044DA997647AF /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28D6CCF1A28C4910AE176A6A /* Roboto.ttf */; };
-		0FB0685414B7407099916D95 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6865F98009C43B1B85EB98C /* rubicon-icon-font.ttf */; };
-		C70588BD449B413DB6BF9606 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 565AC08273334DF0847CBCB3 /* Rubik-Black.ttf */; };
-		560EA275397049AD8C1442E9 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8651FB093F0459C8920EE8A /* Rubik-BlackItalic.ttf */; };
-		8E02B6E2B4324720A90506C9 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93A48E8FF10347F4A9D81ED3 /* Rubik-Bold.ttf */; };
-		E61890677EC4472AAB339DC7 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7704B7E1CA8C4A7ABAADFFAC /* Rubik-BoldItalic.ttf */; };
-		3AB237FF7B3149279EF91098 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 036F88B3A22E4A2CA3250EDF /* Rubik-Italic.ttf */; };
-		BDB0637649C64A04AA7236F9 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC5AD16B33614465A14C037E /* Rubik-Light.ttf */; };
-		933CAE3AF34B4D9ABDA5020C /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1657E13AB40B487BB6572CBD /* Rubik-LightItalic.ttf */; };
-		63C697CEB8C64E65B3D947A4 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 218D8015B0714F3590D46419 /* Rubik-Medium.ttf */; };
-		B5C448E43F6A460DBDB32ABF /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B27F3A7616A44CF4BA0AEF5A /* Rubik-MediumItalic.ttf */; };
-		A1B43223BE804901B87A44FA /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28896B7A39684B58B3BA4245 /* Rubik-Regular.ttf */; };
-		D3E7059A3D85464680A36DE2 /* SanFrancisco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A52644261B74D86BC3AA101 /* SanFrancisco.ttf */; };
-		092C381814CE4E2F83C802ED /* SanFranciscoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E895F380BC2408A9CD0BFAB /* SanFranciscoBold.ttf */; };
-		5848F64D9A9C4F0FA71D0405 /* SanFranciscoThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5BBC99453B5478F8CE00B66 /* SanFranciscoThin.ttf */; };
-		5513BBADDFD1489E9CBA33BD /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8703BEEA2C48481F941B6FC3 /* SF-UI-Text-Regular.otf */; };
-		E8C53AADB4314E2CA0CFFD1B /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2966BA66C294E5AB2D3950E /* SimpleLineIcons.ttf */; };
-		59C27FBFEC0C445BA212914D /* Skia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98AABACC4C5B4398A4633A06 /* Skia.ttf */; };
-		3D17AD7DDC914E549915760F /* Times New Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EB87843A5374909873B0D49 /* Times New Roman.ttf */; };
-		10DC2D09CAC74A3A9B8EE1E2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1E2B8FDB548461FA27AD0AF /* Zocial.ttf */; };
-		2550188D07D4441E8E821080 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888E877B58ED4C4DB99BEF03 /* libRNImagePicker.a */; };
-		4EB409FC1E4240EC9A6415F4 /* libRNSensitiveInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D231A87871F4121A177D549 /* libRNSensitiveInfo.a */; };
-		F29D81F88EEA4776BF13AA64 /* libRNBackgroundTimer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFB0409EE9D4D51BF65EA28 /* libRNBackgroundTimer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +79,7 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = NativeStarterKit;
+			remoteInfo = snappyGroom;
 		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -146,7 +107,7 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "NativeStarterKit-tvOS";
+			remoteInfo = "snappyGroom-tvOS";
 		};
 		3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -276,68 +237,24 @@
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
 		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = "../node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj"; sourceTree = "<group>"; };
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* NativeStarterKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeStarterKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* snappyGroomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snappyGroomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* NativeStarterKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeStarterKitTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* snappyGroomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snappyGroomTests.m; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* NativeStarterKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeStarterKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NativeStarterKit/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NativeStarterKit/AppDelegate.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* snappyGroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snappyGroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = snappyGroom/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = snappyGroom/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NativeStarterKit/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NativeStarterKit/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NativeStarterKit/main.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = snappyGroom/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = snappyGroom/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = snappyGroom/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* NativeStarterKit-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NativeStarterKit-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* NativeStarterKit-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NativeStarterKit-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* snappyGroom-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "snappyGroom-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* snappyGroom-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "snappyGroom-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		8CF9E6BEFC4147298EC84EF9 /* CodePush.xcodeproj */ = {isa = PBXFileReference; name = "CodePush.xcodeproj"; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		B7BE0DD2581F458D9515D6F3 /* libCodePush.a */ = {isa = PBXFileReference; name = "libCodePush.a"; path = "libCodePush.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		88E601CF4F424C34AEE1B2AD /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
-		5355A8CB93664F7D9C8A74BE /* Andale Mono.ttf */ = {isa = PBXFileReference; name = "Andale Mono.ttf"; path = "../node_modules/native-base/Fonts/Andale Mono.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		02A4BACC5BB041C1B5042752 /* Arial Black.ttf */ = {isa = PBXFileReference; name = "Arial Black.ttf"; path = "../node_modules/native-base/Fonts/Arial Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A35A66FDC73A4ACCA5455EBB /* Arial.ttf */ = {isa = PBXFileReference; name = "Arial.ttf"; path = "../node_modules/native-base/Fonts/Arial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		545562C0D137413D80809E6B /* Comic Sans MS.ttf */ = {isa = PBXFileReference; name = "Comic Sans MS.ttf"; path = "../node_modules/native-base/Fonts/Comic Sans MS.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AED09E565FD642898171A4DA /* Courier New.ttf */ = {isa = PBXFileReference; name = "Courier New.ttf"; path = "../node_modules/native-base/Fonts/Courier New.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0E6A9BAB3780431DB120CC66 /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9C60577FB1904EB68BF57F34 /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		806AEEB410704EC5B65799F8 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C87C6A025F8B4E2BB98BCBD2 /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		22277DD338214F11BD8B078F /* Georgia.ttf */ = {isa = PBXFileReference; name = "Georgia.ttf"; path = "../node_modules/native-base/Fonts/Georgia.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		480A5CD31B5545FAA599078E /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DE5C85CA5BE24D838E276261 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		44B9C95CD689471AA89C919B /* Microsoft Sans Serif.ttf */ = {isa = PBXFileReference; name = "Microsoft Sans Serif.ttf"; path = "../node_modules/native-base/Fonts/Microsoft Sans Serif.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		82591B37FCD54EBCBC6675AE /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7A39027A99DD4C84A9EBE2A0 /* Roboto_medium.ttf */ = {isa = PBXFileReference; name = "Roboto_medium.ttf"; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		28D6CCF1A28C4910AE176A6A /* Roboto.ttf */ = {isa = PBXFileReference; name = "Roboto.ttf"; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A6865F98009C43B1B85EB98C /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		565AC08273334DF0847CBCB3 /* Rubik-Black.ttf */ = {isa = PBXFileReference; name = "Rubik-Black.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B8651FB093F0459C8920EE8A /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; name = "Rubik-BlackItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		93A48E8FF10347F4A9D81ED3 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; name = "Rubik-Bold.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7704B7E1CA8C4A7ABAADFFAC /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Rubik-BoldItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		036F88B3A22E4A2CA3250EDF /* Rubik-Italic.ttf */ = {isa = PBXFileReference; name = "Rubik-Italic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DC5AD16B33614465A14C037E /* Rubik-Light.ttf */ = {isa = PBXFileReference; name = "Rubik-Light.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1657E13AB40B487BB6572CBD /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; name = "Rubik-LightItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		218D8015B0714F3590D46419 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; name = "Rubik-Medium.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B27F3A7616A44CF4BA0AEF5A /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Rubik-MediumItalic.ttf"; path = "../node_modules/native-base/Fonts/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		28896B7A39684B58B3BA4245 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; name = "Rubik-Regular.ttf"; path = "../node_modules/native-base/Fonts/Rubik-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7A52644261B74D86BC3AA101 /* SanFrancisco.ttf */ = {isa = PBXFileReference; name = "SanFrancisco.ttf"; path = "../node_modules/native-base/Fonts/SanFrancisco.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6E895F380BC2408A9CD0BFAB /* SanFranciscoBold.ttf */ = {isa = PBXFileReference; name = "SanFranciscoBold.ttf"; path = "../node_modules/native-base/Fonts/SanFranciscoBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A5BBC99453B5478F8CE00B66 /* SanFranciscoThin.ttf */ = {isa = PBXFileReference; name = "SanFranciscoThin.ttf"; path = "../node_modules/native-base/Fonts/SanFranciscoThin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8703BEEA2C48481F941B6FC3 /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; name = "SF-UI-Text-Regular.otf"; path = "../node_modules/native-base/Fonts/SF-UI-Text-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B2966BA66C294E5AB2D3950E /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		98AABACC4C5B4398A4633A06 /* Skia.ttf */ = {isa = PBXFileReference; name = "Skia.ttf"; path = "../node_modules/native-base/Fonts/Skia.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3EB87843A5374909873B0D49 /* Times New Roman.ttf */ = {isa = PBXFileReference; name = "Times New Roman.ttf"; path = "../node_modules/native-base/Fonts/Times New Roman.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E1E2B8FDB548461FA27AD0AF /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8888FF2A2D9F438991999FFB /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		888E877B58ED4C4DB99BEF03 /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		559A6290A3C74AB89A8B1482 /* RNSensitiveInfo.xcodeproj */ = {isa = PBXFileReference; name = "RNSensitiveInfo.xcodeproj"; path = "../node_modules/react-native-sensitive-info/ios/RNSensitiveInfo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		8D231A87871F4121A177D549 /* libRNSensitiveInfo.a */ = {isa = PBXFileReference; name = "libRNSensitiveInfo.a"; path = "libRNSensitiveInfo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		3A89C12E73C9401D8DCCE445 /* RNBackgroundTimer.xcodeproj */ = {isa = PBXFileReference; name = "RNBackgroundTimer.xcodeproj"; path = "../node_modules/react-native-background-timer/ios/RNBackgroundTimer.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		8DFB0409EE9D4D51BF65EA28 /* libRNBackgroundTimer.a */ = {isa = PBXFileReference; name = "libRNBackgroundTimer.a"; path = "libRNBackgroundTimer.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,11 +281,6 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				A21B40C6614B4D55815186A4 /* libCodePush.a in Frameworks */,
-				8013716853094B8FA85F4499 /* libz.tbd in Frameworks */,
-				2550188D07D4441E8E821080 /* libRNImagePicker.a in Frameworks */,
-				4EB409FC1E4240EC9A6415F4 /* libRNSensitiveInfo.a in Frameworks */,
-				F29D81F88EEA4776BF13AA64 /* libRNBackgroundTimer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,13 +351,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		00E356EF1AD99517003FC87E /* NativeStarterKitTests */ = {
+		00E356EF1AD99517003FC87E /* snappyGroomTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* NativeStarterKitTests.m */,
+				00E356F21AD99517003FC87E /* snappyGroomTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = NativeStarterKitTests;
+			path = snappyGroomTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -474,7 +386,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* NativeStarterKit */ = {
+		13B07FAE1A68108700A75B9A /* snappyGroom */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -485,7 +397,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = NativeStarterKit;
+			name = snappyGroom;
 			sourceTree = "<group>";
 		};
 		146834001AC3E56700842450 /* Products */ = {
@@ -535,10 +447,6 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				8CF9E6BEFC4147298EC84EF9 /* CodePush.xcodeproj */,
-				8888FF2A2D9F438991999FFB /* RNImagePicker.xcodeproj */,
-				559A6290A3C74AB89A8B1482 /* RNSensitiveInfo.xcodeproj */,
-				3A89C12E73C9401D8DCCE445 /* RNBackgroundTimer.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -555,12 +463,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* NativeStarterKit */,
+				13B07FAE1A68108700A75B9A /* snappyGroom */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* NativeStarterKitTests */,
+				00E356EF1AD99517003FC87E /* snappyGroomTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-				E351BEE20F93490B8992802C /* Frameworks */,
-				B353FA73AEF04EA09CEA5B0C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -569,72 +475,20 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* NativeStarterKit.app */,
-				00E356EE1AD99517003FC87E /* NativeStarterKitTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* NativeStarterKit-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* NativeStarterKit-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* snappyGroom.app */,
+				00E356EE1AD99517003FC87E /* snappyGroomTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* snappyGroom-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* snappyGroom-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E351BEE20F93490B8992802C /* Frameworks */ = {
-			isa = "PBXGroup";
-			children = (
-				88E601CF4F424C34AEE1B2AD /* libz.tbd */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-			path = "";
-		};
-		B353FA73AEF04EA09CEA5B0C /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				5355A8CB93664F7D9C8A74BE /* Andale Mono.ttf */,
-				02A4BACC5BB041C1B5042752 /* Arial Black.ttf */,
-				A35A66FDC73A4ACCA5455EBB /* Arial.ttf */,
-				545562C0D137413D80809E6B /* Comic Sans MS.ttf */,
-				AED09E565FD642898171A4DA /* Courier New.ttf */,
-				0E6A9BAB3780431DB120CC66 /* Entypo.ttf */,
-				9C60577FB1904EB68BF57F34 /* EvilIcons.ttf */,
-				806AEEB410704EC5B65799F8 /* FontAwesome.ttf */,
-				C87C6A025F8B4E2BB98BCBD2 /* Foundation.ttf */,
-				22277DD338214F11BD8B078F /* Georgia.ttf */,
-				480A5CD31B5545FAA599078E /* Ionicons.ttf */,
-				DE5C85CA5BE24D838E276261 /* MaterialIcons.ttf */,
-				44B9C95CD689471AA89C919B /* Microsoft Sans Serif.ttf */,
-				82591B37FCD54EBCBC6675AE /* Octicons.ttf */,
-				7A39027A99DD4C84A9EBE2A0 /* Roboto_medium.ttf */,
-				28D6CCF1A28C4910AE176A6A /* Roboto.ttf */,
-				A6865F98009C43B1B85EB98C /* rubicon-icon-font.ttf */,
-				565AC08273334DF0847CBCB3 /* Rubik-Black.ttf */,
-				B8651FB093F0459C8920EE8A /* Rubik-BlackItalic.ttf */,
-				93A48E8FF10347F4A9D81ED3 /* Rubik-Bold.ttf */,
-				7704B7E1CA8C4A7ABAADFFAC /* Rubik-BoldItalic.ttf */,
-				036F88B3A22E4A2CA3250EDF /* Rubik-Italic.ttf */,
-				DC5AD16B33614465A14C037E /* Rubik-Light.ttf */,
-				1657E13AB40B487BB6572CBD /* Rubik-LightItalic.ttf */,
-				218D8015B0714F3590D46419 /* Rubik-Medium.ttf */,
-				B27F3A7616A44CF4BA0AEF5A /* Rubik-MediumItalic.ttf */,
-				28896B7A39684B58B3BA4245 /* Rubik-Regular.ttf */,
-				7A52644261B74D86BC3AA101 /* SanFrancisco.ttf */,
-				6E895F380BC2408A9CD0BFAB /* SanFranciscoBold.ttf */,
-				A5BBC99453B5478F8CE00B66 /* SanFranciscoThin.ttf */,
-				8703BEEA2C48481F941B6FC3 /* SF-UI-Text-Regular.otf */,
-				B2966BA66C294E5AB2D3950E /* SimpleLineIcons.ttf */,
-				98AABACC4C5B4398A4633A06 /* Skia.ttf */,
-				3EB87843A5374909873B0D49 /* Times New Roman.ttf */,
-				E1E2B8FDB548461FA27AD0AF /* Zocial.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* NativeStarterKitTests */ = {
+		00E356ED1AD99517003FC87E /* snappyGroomTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NativeStarterKitTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "snappyGroomTests" */;
 			buildPhases = (
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
@@ -645,14 +499,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = NativeStarterKitTests;
-			productName = NativeStarterKitTests;
-			productReference = 00E356EE1AD99517003FC87E /* NativeStarterKitTests.xctest */;
+			name = snappyGroomTests;
+			productName = snappyGroomTests;
+			productReference = 00E356EE1AD99517003FC87E /* snappyGroomTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* NativeStarterKit */ = {
+		13B07F861A680F5B00A75B9A /* snappyGroom */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NativeStarterKit" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "snappyGroom" */;
 			buildPhases = (
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -663,14 +517,14 @@
 			);
 			dependencies = (
 			);
-			name = NativeStarterKit;
+			name = snappyGroom;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* NativeStarterKit.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* snappyGroom.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* NativeStarterKit-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* snappyGroom-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NativeStarterKit-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "snappyGroom-tvOS" */;
 			buildPhases = (
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -681,14 +535,14 @@
 			);
 			dependencies = (
 			);
-			name = "NativeStarterKit-tvOS";
-			productName = "NativeStarterKit-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* NativeStarterKit-tvOS.app */;
+			name = "snappyGroom-tvOS";
+			productName = "snappyGroom-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* snappyGroom-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* NativeStarterKit-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* snappyGroom-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NativeStarterKit-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "snappyGroom-tvOSTests" */;
 			buildPhases = (
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
@@ -699,9 +553,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "NativeStarterKit-tvOSTests";
-			productName = "NativeStarterKit-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* NativeStarterKit-tvOSTests.xctest */;
+			name = "snappyGroom-tvOSTests";
+			productName = "snappyGroom-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* snappyGroom-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -710,7 +564,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 610;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -728,7 +582,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NativeStarterKit" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "snappyGroom" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -787,10 +641,10 @@
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* NativeStarterKit */,
-				00E356ED1AD99517003FC87E /* NativeStarterKitTests */,
-				2D02E47A1E0B4A5D006451C7 /* NativeStarterKit-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* NativeStarterKit-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* snappyGroom */,
+				00E356ED1AD99517003FC87E /* snappyGroomTests */,
+				2D02E47A1E0B4A5D006451C7 /* snappyGroom-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* snappyGroom-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -987,41 +841,6 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				872091C8D2114B9D9DD0B541 /* Andale Mono.ttf in Resources */,
-				ADE68986A7684BA8863CF7E0 /* Arial Black.ttf in Resources */,
-				FC13C0B05005406B93B17E9F /* Arial.ttf in Resources */,
-				E42C58C908584CCFB0B5A987 /* Comic Sans MS.ttf in Resources */,
-				9CC3487C95F34B4B9D8FF3F6 /* Courier New.ttf in Resources */,
-				F0C53DA4F10E443BA10C86BC /* Entypo.ttf in Resources */,
-				FB656AA50F3745F6830C73FE /* EvilIcons.ttf in Resources */,
-				033D8FEB4356477897A180CD /* FontAwesome.ttf in Resources */,
-				850FC8C622D2407A83DAA2F7 /* Foundation.ttf in Resources */,
-				6C81BAC5D09B43CB83FBA07D /* Georgia.ttf in Resources */,
-				E59802299DB54362916CF637 /* Ionicons.ttf in Resources */,
-				BD9624342FDC43DB9691E453 /* MaterialIcons.ttf in Resources */,
-				F1B2721BCA20434385F7A54A /* Microsoft Sans Serif.ttf in Resources */,
-				47EC7067813645549C78544A /* Octicons.ttf in Resources */,
-				045C8C62E3E640288C2712F7 /* Roboto_medium.ttf in Resources */,
-				C9A167AF675044DA997647AF /* Roboto.ttf in Resources */,
-				0FB0685414B7407099916D95 /* rubicon-icon-font.ttf in Resources */,
-				C70588BD449B413DB6BF9606 /* Rubik-Black.ttf in Resources */,
-				560EA275397049AD8C1442E9 /* Rubik-BlackItalic.ttf in Resources */,
-				8E02B6E2B4324720A90506C9 /* Rubik-Bold.ttf in Resources */,
-				E61890677EC4472AAB339DC7 /* Rubik-BoldItalic.ttf in Resources */,
-				3AB237FF7B3149279EF91098 /* Rubik-Italic.ttf in Resources */,
-				BDB0637649C64A04AA7236F9 /* Rubik-Light.ttf in Resources */,
-				933CAE3AF34B4D9ABDA5020C /* Rubik-LightItalic.ttf in Resources */,
-				63C697CEB8C64E65B3D947A4 /* Rubik-Medium.ttf in Resources */,
-				B5C448E43F6A460DBDB32ABF /* Rubik-MediumItalic.ttf in Resources */,
-				A1B43223BE804901B87A44FA /* Rubik-Regular.ttf in Resources */,
-				D3E7059A3D85464680A36DE2 /* SanFrancisco.ttf in Resources */,
-				092C381814CE4E2F83C802ED /* SanFranciscoBold.ttf in Resources */,
-				5848F64D9A9C4F0FA71D0405 /* SanFranciscoThin.ttf in Resources */,
-				5513BBADDFD1489E9CBA33BD /* SF-UI-Text-Regular.otf in Resources */,
-				E8C53AADB4314E2CA0CFFD1B /* SimpleLineIcons.ttf in Resources */,
-				59C27FBFEC0C445BA212914D /* Skia.ttf in Resources */,
-				3D17AD7DDC914E549915760F /* Times New Roman.ttf in Resources */,
-				10DC2D09CAC74A3A9B8EE1E2 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1078,7 +897,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* NativeStarterKitTests.m in Sources */,
+				00E356F31AD99517003FC87E /* snappyGroomTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1104,7 +923,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* NativeStarterKitTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* snappyGroomTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,12 +932,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* NativeStarterKit */;
+			target = 13B07F861A680F5B00A75B9A /* snappyGroom */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* NativeStarterKit-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* snappyGroom-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1130,7 +949,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = NativeStarterKit;
+			path = snappyGroom;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1144,7 +963,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = NativeStarterKitTests/Info.plist;
+				INFOPLIST_FILE = snappyGroomTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1152,19 +971,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NativeStarterKit.app/NativeStarterKit";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-code-push\ios\CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
-					"$(SRCROOT)\..\node_modules\react-native-sensitive-info\ios\RNSensitiveInfo/**",
-					"$(SRCROOT)\..\node_modules\react-native-background-timer\ios",
-				);
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/snappyGroom.app/snappyGroom";
 			};
 			name = Debug;
 		};
@@ -1173,7 +980,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = NativeStarterKitTests/Info.plist;
+				INFOPLIST_FILE = snappyGroomTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1181,19 +988,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NativeStarterKit.app/NativeStarterKit";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-code-push\ios\CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
-					"$(SRCROOT)\..\node_modules\react-native-sensitive-info\ios\RNSensitiveInfo/**",
-					"$(SRCROOT)\..\node_modules\react-native-background-timer\ios",
-				);
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/snappyGroom.app/snappyGroom";
 			};
 			name = Release;
 		};
@@ -1203,22 +998,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				INFOPLIST_FILE = NativeStarterKit/Info.plist;
+				INFOPLIST_FILE = snappyGroom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_NAME = NativeStarterKit;
+				PRODUCT_NAME = snappyGroom;
 				VERSIONING_SYSTEM = "apple-generic";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-code-push\ios\CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
-					"$(SRCROOT)\..\node_modules\react-native-sensitive-info\ios\RNSensitiveInfo/**",
-					"$(SRCROOT)\..\node_modules\react-native-background-timer\ios",
-				);
 			};
 			name = Debug;
 		};
@@ -1227,22 +1015,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = NativeStarterKit/Info.plist;
+				INFOPLIST_FILE = snappyGroom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_NAME = NativeStarterKit;
+				PRODUCT_NAME = snappyGroom;
 				VERSIONING_SYSTEM = "apple-generic";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-code-push\ios\CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
-					"$(SRCROOT)\..\node_modules\react-native-sensitive-info\ios\RNSensitiveInfo/**",
-					"$(SRCROOT)\..\node_modules\react-native-background-timer\ios",
-				);
 			};
 			name = Release;
 		};
@@ -1258,29 +1039,17 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "NativeStarterKit-tvOS/Info.plist";
+				INFOPLIST_FILE = "snappyGroom-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.NativeStarterKit-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.snappyGroom-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-code-push\ios\CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
-					"$(SRCROOT)\..\node_modules\react-native-sensitive-info\ios\RNSensitiveInfo/**",
-					"$(SRCROOT)\..\node_modules\react-native-background-timer\ios",
-				);
 			};
 			name = Debug;
 		};
@@ -1296,29 +1065,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "NativeStarterKit-tvOS/Info.plist";
+				INFOPLIST_FILE = "snappyGroom-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.NativeStarterKit-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.snappyGroom-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)\..\node_modules\react-native-code-push\ios\CodePush/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
-					"$(SRCROOT)\..\node_modules\react-native-sensitive-info\ios\RNSensitiveInfo/**",
-					"$(SRCROOT)\..\node_modules\react-native-background-timer\ios",
-				);
 			};
 			name = Release;
 		};
@@ -1333,18 +1090,13 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "NativeStarterKit-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "snappyGroom-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.NativeStarterKit-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.snappyGroom-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NativeStarterKit-tvOS.app/NativeStarterKit-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/snappyGroom-tvOS.app/snappyGroom-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
 			};
 			name = Debug;
 		};
@@ -1359,18 +1111,13 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "NativeStarterKit-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "snappyGroom-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.NativeStarterKit-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.snappyGroom-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NativeStarterKit-tvOS.app/NativeStarterKit-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/snappyGroom-tvOS.app/snappyGroom-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
 			};
 			name = Release;
 		};
@@ -1453,7 +1200,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NativeStarterKitTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "snappyGroomTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1462,7 +1209,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NativeStarterKit" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "snappyGroom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1471,7 +1218,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NativeStarterKit-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "snappyGroom-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1480,7 +1227,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "NativeStarterKit-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "snappyGroom-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1489,7 +1236,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NativeStarterKit" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "snappyGroom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

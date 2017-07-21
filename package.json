@@ -1,5 +1,5 @@
 {
-  "name": "NativeStarterKit",
+  "name": "snappyGroom",
   "version": "6.1.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "react": "16.0.0-alpha.12",
     "react-native": "0.45.1",
     "react-native-animated-modal": "^1.1.0",
+    "react-native-background-timer": "^1.1.0",
     "react-native-code-push": "2.0.1-beta",
     "react-native-collapsible": "^0.8.0",
     "react-native-easy-grid": "0.1.8",

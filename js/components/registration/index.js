@@ -60,6 +60,7 @@ class Registration extends Component {
   }
   
   selectPhotoTapped() {
+    console.log("select photo tapped", ImagePicker.launchCamera);
     const options = {
       quality: 1.0,
       maxWidth: 500,

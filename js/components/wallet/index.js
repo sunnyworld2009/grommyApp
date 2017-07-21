@@ -177,7 +177,7 @@ render() {
               this.state.showError && <Text style={{ color: 'red' }}>Please enter Amount less than Wallet Amount</Text>
           }
         </View>
-        <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'stretch' }}>
+        <View style={{ paddingVertical: 2, flexDirection: 'row', alignItems: 'stretch' }}>
           <Button
             style={{ marginLeft: 5, color: '#4B0082', borderColor: 'white' }}
             bordered

@@ -60,7 +60,7 @@ class Login extends Component {
   }
 
   componentWillMount() {
-    SInfo.getItem('driver_username', {
+   !!SInfo && _.isFunction(SInfo.getItem) && SInfo.getItem('driver_username', {
       sharedPreferencesName: 'SnappyGroom',
       keychainService: 'SnappyGroom' }).then((userName) => {
         if(!!userName) {

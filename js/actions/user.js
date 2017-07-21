@@ -30,7 +30,7 @@ export function setUser(user:string):Action {
         console.log("ERROR " + error)
       })
       .then((responseData) => {
-        console.log(responseData);
+        console.log("User data is ", responseData);
         dispatch(clearUserData());
         dispatch(updateUserData(responseData));
         // SInfo.setItem('groomyUser', responseData, {});

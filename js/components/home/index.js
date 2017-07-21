@@ -30,10 +30,11 @@ import {
   ListItem,
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
+import BackgroundTimer from 'react-native-background-timer';
 
 import { setIndex } from "../../actions/list";
 import { openDrawer } from "../../actions/drawer";
-import { getCurrentBookingData } from "../../actions/homeAction";
+import { getCurrentBookingData, setGeolocation } from "../../actions/homeAction";
 import styles from "./styles";
 import Accordion from 'react-native-collapsible/Accordion';
 
@@ -42,6 +43,8 @@ const mapStateToProps = state => ({
   list: state.list.list,
   bookingData: state.home.bookingData
 });
+
+const myInterval = null;
 
 class Home extends Component {
   static navigationOptions = {
@@ -58,6 +61,31 @@ class Home extends Component {
     console.log("driver id is ",this.props.userData.driver_id);
     const driver_id = this.props.userData.driver_id;
     this.props.getCurrentBookingData(driver_id);
+  }
+
+  componentDidMount() {
+    console.log("component did mount");
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        console.log("geolocation is ", position.coords.latitude);
+       /* this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          error: null,
+        }); */
+    if(!myInterval) {
+      this.props.setGeolocation(this.props.userData.driver_id, position.coords.latitude, position.coords.longitude);
+      myInterval = BackgroundTimer.setInterval(() => {
+        console.log("setting myInterval");
+      this.props.setGeolocation(this.props.userData.driver_id, position.coords.latitude, position.coords.longitude);
+    }, 300000);
+    }
+    
+
+      },
+      (error) => console.log("error is", error),
+      { enableHighAccuracy: true, timeout: 20000 },
+    );
   }
   
   newPage(index) {
@@ -153,7 +181,8 @@ function bindAction(dispatch) {
   return {
     setIndex: index => dispatch(setIndex(index)),
     openDrawer: () => dispatch(openDrawer()),
-    getCurrentBookingData: (driver_id) => dispatch(getCurrentBookingData(driver_id))
+    getCurrentBookingData: (driver_id) => dispatch(getCurrentBookingData(driver_id)),
+    setGeolocation: (driver_id, lat, lon) => dispatch(setGeolocation(driver_id, lat, lon))
   };
 }
 
