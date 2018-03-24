@@ -60,9 +60,11 @@ class Login extends Component {
   }
 
   componentWillMount() {
+    console.log('in login page component will mount');
    !!SInfo && _.isFunction(SInfo.getItem) && SInfo.getItem('driver_username', {
       sharedPreferencesName: 'SnappyGroom',
       keychainService: 'SnappyGroom' }).then((userName) => {
+        console.log('username isssss', userName);
         if(!!userName) {
           this.setState({
             showLoader: true
@@ -70,6 +72,7 @@ class Login extends Component {
           SInfo.getItem('driver_password', {
             sharedPreferencesName: 'SnappyGroom',
             keychainService: 'SnappyGroom' }).then((password) => {
+               console.log('password isssss', password);
               if(!!password) {
                 this.props.setUser({
                 email: userName,

@@ -16,6 +16,7 @@ export const clearUserData = (responseData) => ({
 });
 
 export function setUser(user:string):Action {
+  console.log('in login action ', user);
   const formdata = new FormData();
   if(!!user && !!user.email && !! user.password) {
     formdata.append("username", user.email);
